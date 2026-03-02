@@ -11,24 +11,32 @@ export default function Footer() {
               IPTV<span className="text-primary"> Trends</span>
             </span>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              The ultimate 4K entertainment hub. Premium IPTV service with
-              21,000+ channels and 65,000+ VOD content.
+              IPTV Trends is the #1 premium IPTV subscription service in 2026.
+              Stream 21,000+ live IPTV channels and 65,000+ VOD movies and series
+              in 4K UHD quality on any device. The best IPTV provider with
+              anti-freeze technology and 99.9% uptime.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
             <h4 className="mb-4 text-sm font-semibold text-foreground">
-              Quick Links
+              IPTV Trends Links
             </h4>
             <ul className="flex flex-col gap-2.5">
-              {["Home", "Pricing", "Reseller", "Contact"].map((link) => (
-                <li key={link}>
+              {[
+                { label: "IPTV Trends Home", href: "#home" },
+                { label: "IPTV Subscription Pricing", href: "#pricing" },
+                { label: "IPTV Reseller Program", href: "#reseller" },
+                { label: "Contact IPTV Trends", href: "https://wa.me/212710141872" },
+                { label: "Free IPTV Trial", href: "https://wa.me/212710141872?text=I%20want%20a%2024h%20free%20IPTV%20trial" },
+              ].map((link) => (
+                <li key={link.label}>
                   <Link
-                    href={`#${link.toLowerCase()}`}
+                    href={link.href}
                     className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                   >
-                    {link}
+                    {link.label}
                   </Link>
                 </li>
               ))}
@@ -38,15 +46,15 @@ export default function Footer() {
           {/* Devices */}
           <div>
             <h4 className="mb-4 text-sm font-semibold text-foreground">
-              Supported Devices
+              IPTV Compatible Devices
             </h4>
             <ul className="flex flex-col gap-2.5">
               {[
-                "Smart TV (Samsung, LG)",
-                "Amazon Firestick",
-                "Android / MAG Box",
-                "Apple TV / iOS",
-                "PC / Mac",
+                "Smart TV IPTV (Samsung, LG)",
+                "Amazon Firestick IPTV",
+                "Android IPTV / MAG Box",
+                "Apple TV / iPhone IPTV",
+                "PC / Mac IPTV Streaming",
               ].map((device) => (
                 <li
                   key={device}
@@ -61,7 +69,7 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h4 className="mb-4 text-sm font-semibold text-foreground">
-              Contact Us
+              Contact IPTV Trends
             </h4>
             <ul className="flex flex-col gap-2.5">
               <li>
@@ -75,18 +83,22 @@ export default function Footer() {
                 </Link>
               </li>
               <li className="text-sm text-muted-foreground">
-                24/7 Customer Support
+                24/7 IPTV Customer Support
               </li>
               <li className="text-sm text-muted-foreground">
                 7-Day Money Back Guarantee
+              </li>
+              <li className="text-sm text-muted-foreground">
+                Instant IPTV Activation
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-10 border-t border-border/30 pt-6 text-center">
-          <p className="text-xs text-muted-foreground">
-            {"\u00A9"} {new Date().getFullYear()} IPTV Trends. All rights reserved.
+        {/* SEO-rich footer text */}
+        <div className="mt-10 border-t border-border/30 pt-6">
+          <p className="text-center text-xs leading-relaxed text-muted-foreground">
+            {"\u00A9"} {new Date().getFullYear()} IPTV Trends - Best Premium IPTV Subscription Service. All rights reserved. IPTV Trends provides the highest quality IPTV streaming experience with 21,000+ live channels, 65,000+ movies and series, 4K UHD quality, anti-freeze technology, and support for Smart TV, Firestick, Android, iOS, and MAG Box. IPTV Trends is not affiliated with any third-party streaming platforms.
           </p>
         </div>
       </div>

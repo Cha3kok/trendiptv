@@ -32,7 +32,7 @@ export default function ChannelSearch() {
           viewport={{ once: true }}
           className="text-balance text-3xl font-bold text-foreground sm:text-4xl"
         >
-          Find Your Favorite <span className="text-primary">Channels</span>
+          IPTV Trends <span className="text-primary">Channel List</span> - 21,000+ Live Channels
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -41,7 +41,7 @@ export default function ChannelSearch() {
           transition={{ delay: 0.1 }}
           className="mt-4 text-pretty text-muted-foreground"
         >
-          Search from 20,000+ live channels including sports, movies, news, and entertainment
+          Browse the full IPTV Trends channels list featuring premium sports, entertainment, news, kids, and international channels from every country. Our IPTV subscription includes all major networks.
         </motion.p>
 
         {/* Search bar mockup */}
@@ -54,7 +54,7 @@ export default function ChannelSearch() {
         >
           <Search className="h-5 w-5 shrink-0 text-muted-foreground" />
           <span className="text-left text-sm text-muted-foreground">
-            Search for your favorite sports or movie channel...
+            Search IPTV Trends channels - sports, movies, series, PPV events...
           </span>
         </motion.div>
       </div>

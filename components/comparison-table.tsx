@@ -4,17 +4,17 @@ import { motion } from "framer-motion"
 import { Check, X } from "lucide-react"
 
 const rows = [
-  { feature: "Anti-Freeze Technology", us: true, others: false },
-  { feature: "4K / UHD Quality", us: true, others: false },
-  { feature: "Instant Activation", us: true, others: false },
+  { feature: "Anti-Freeze IPTV Technology", us: true, others: false },
+  { feature: "4K / UHD IPTV Streaming Quality", us: true, others: false },
+  { feature: "Instant IPTV Activation", us: true, others: false },
   { feature: "Electronic Program Guide (EPG)", us: true, others: false },
-  { feature: "21,000+ Live Channels", us: true, others: false },
-  { feature: "65,000+ VOD Library", us: true, others: false },
-  { feature: "Catch-Up TV", us: true, others: false },
-  { feature: "24/7 Priority Support", us: true, others: false },
-  { feature: "99.9% Uptime", us: true, others: false },
-  { feature: "Multi-Device Support", us: true, others: true },
-  { feature: "7-Day Money Back", us: true, others: false },
+  { feature: "21,000+ Live IPTV Channels", us: true, others: false },
+  { feature: "65,000+ VOD Movies & Series", us: true, others: false },
+  { feature: "Catch-Up TV & Replay Feature", us: true, others: false },
+  { feature: "24/7 Premium IPTV Support", us: true, others: false },
+  { feature: "99.9% IPTV Server Uptime", us: true, others: false },
+  { feature: "Multi-Device IPTV Streaming", us: true, others: true },
+  { feature: "7-Day IPTV Money Back Guarantee", us: true, others: false },
 ]
 
 export default function ComparisonTable() {
@@ -28,10 +28,10 @@ export default function ComparisonTable() {
           className="text-center"
         >
           <h2 className="text-balance text-3xl font-bold text-foreground sm:text-4xl">
-            Why <span className="text-primary">IPTV Trends</span>?
+            Why Choose <span className="text-primary">IPTV Trends</span> Over Other IPTV Providers?
           </h2>
           <p className="mt-4 text-pretty text-muted-foreground">
-            See how we compare to other IPTV providers
+            Compare IPTV Trends vs other IPTV services. See why thousands of subscribers choose IPTV Trends as their go-to premium IPTV provider in 2026.
           </p>
         </motion.div>
 

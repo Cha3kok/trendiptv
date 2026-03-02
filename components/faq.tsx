@@ -10,44 +10,54 @@ import {
 
 const faqs = [
   {
-    question: "What is IPTV Trends?",
+    question: "What is IPTV Trends and why is it the best IPTV service?",
     answer:
-      "IPTV Trends is a premium IPTV service that provides access to 21,000+ live TV channels and 65,000+ movies and series in 4K/UHD quality. We support all major devices including Smart TVs, Firestick, Android, iOS, MAG boxes, and PCs.",
+      "IPTV Trends is a premium IPTV subscription service that provides access to over 21,000 live TV channels and 65,000+ movies and series in 4K UHD quality. IPTV Trends stands out from other IPTV providers because of our proprietary anti-freeze technology, 99.9% server uptime, and support for all major devices including Smart TVs, Amazon Firestick, Android, iOS, MAG boxes, and PCs. We are rated the #1 IPTV service in 2026 by thousands of satisfied subscribers worldwide.",
   },
   {
-    question: "How fast is the activation?",
+    question: "How much does an IPTV Trends subscription cost?",
     answer:
-      "Activation is instant. Once your payment is confirmed, you will receive your login credentials via WhatsApp within minutes. You can start watching immediately.",
+      "IPTV Trends offers three affordable subscription plans: Basic IPTV at $49.99/year for 1 device, Pro IPTV at $69.99/year for 2 devices (our most popular plan), and Elite IPTV at $89.99/year for 3 devices. All IPTV Trends plans include 21,000+ live channels, 65,000+ VOD, 4K quality, anti-freeze technology, and 24/7 customer support. That is less than $4.17/month for premium IPTV service.",
   },
   {
-    question: "Do you offer a free trial?",
+    question: "Does IPTV Trends offer a free IPTV trial?",
     answer:
-      "Yes! We offer a 24-hour free trial so you can test our service quality, channel lineup, and streaming stability before committing to a plan. Contact us on WhatsApp to request your trial.",
+      "Yes! IPTV Trends offers a free 24-hour IPTV trial so you can test our IPTV service quality, full channel lineup, VOD library, and streaming stability before committing to a paid IPTV subscription. Contact us on WhatsApp to request your free IPTV Trends trial instantly.",
   },
   {
-    question: "What is your refund policy?",
+    question: "What is the IPTV Trends refund policy?",
     answer:
-      "We offer a 7-day money-back guarantee. If you are not satisfied with our service within the first 7 days of your subscription, contact our support team for a full refund. No questions asked.",
+      "IPTV Trends offers a 7-day money-back guarantee on all IPTV subscription plans. If you are not 100% satisfied with our IPTV service within the first 7 days, contact our support team for a full refund. No questions asked. We are confident IPTV Trends is the best IPTV provider you will find.",
   },
   {
-    question: "What payment methods do you accept?",
+    question: "What payment methods does IPTV Trends accept?",
     answer:
-      "We accept a variety of payment methods including credit/debit cards, PayPal, cryptocurrency, and bank transfers. Contact us on WhatsApp for the most convenient payment option for you.",
+      "IPTV Trends accepts a wide range of payment methods to make buying your IPTV subscription easy: credit/debit cards (Visa, Mastercard), PayPal, cryptocurrency (Bitcoin, USDT), and bank transfers. Contact us on WhatsApp and we will help you choose the most convenient payment option for your IPTV Trends subscription.",
   },
   {
-    question: "Can I use IPTV Trends on multiple devices?",
+    question: "Can I use IPTV Trends on multiple devices at the same time?",
     answer:
-      "Yes! Depending on your plan, you can use IPTV Trends on 1 to 3 devices simultaneously. Our Pro plan supports 2 devices and our Elite plan supports 3 devices for the whole family.",
+      "Yes! IPTV Trends supports multi-device IPTV streaming depending on your plan. The Basic IPTV plan supports 1 device, the Pro IPTV plan supports 2 simultaneous devices, and the Elite IPTV plan supports 3 devices streaming at the same time - perfect for families who want to share one IPTV Trends subscription.",
   },
   {
-    question: "What is Anti-Freeze Technology?",
+    question: "What is IPTV Trends Anti-Freeze Technology?",
     answer:
-      "Our proprietary Anti-Freeze v10 engine ensures buffer-free streaming by automatically optimizing your connection and switching to the best available server. This means smooth, uninterrupted viewing even during peak hours.",
+      "IPTV Trends uses a proprietary Anti-Freeze v10 engine that ensures completely buffer-free IPTV streaming. This technology automatically optimizes your connection and switches to the best available IPTV server in real-time. This means smooth, uninterrupted IPTV viewing even during peak hours, live sports events, and PPV matches. No other IPTV provider offers this level of streaming reliability.",
   },
   {
-    question: "How do I set up IPTV Trends?",
+    question: "How do I install and set up IPTV Trends on my device?",
     answer:
-      "Setup is simple and takes under 5 minutes. After purchasing, we send you login credentials. Download a compatible IPTV player on your device, enter the credentials, and you're ready to stream. We provide step-by-step guides for every device.",
+      "Setting up IPTV Trends takes under 5 minutes on any device. After purchasing your IPTV subscription, we send you Xtream Codes login credentials via WhatsApp. Simply download a compatible IPTV player (IPTV Smarters Pro, TiviMate, or GSE Smart IPTV) on your Smart TV, Firestick, Android, iOS, or MAG box, enter your IPTV Trends credentials, and start streaming instantly. We provide step-by-step IPTV setup guides for every device.",
+  },
+  {
+    question: "What channels are included in the IPTV Trends channel list?",
+    answer:
+      "IPTV Trends includes 21,000+ live IPTV channels from every country and category: all premium sports channels (beIN Sports, Sky Sports, ESPN, DAZN), entertainment (HBO, Showtime, Canal+), all major streaming platforms (Netflix, Disney+, Amazon Prime content), news, kids, music, documentary, and international channels. Plus 65,000+ VOD movies and series updated daily. Check our full IPTV channel list for details.",
+  },
+  {
+    question: "How do I become an IPTV Trends reseller?",
+    answer:
+      "Joining the IPTV Trends reseller program is easy and profitable. As an IPTV reseller, you get wholesale pricing, a professional reseller panel to manage your IPTV clients, create subscriptions, and track credits. IPTV Trends provides full reseller training and 24/7 dedicated support. Contact us on WhatsApp to learn about our IPTV reseller packages and start your own IPTV business today.",
   },
 ]
 
@@ -62,10 +72,10 @@ export default function FAQ() {
           className="text-center"
         >
           <h2 className="text-balance text-3xl font-bold text-foreground sm:text-4xl">
-            Frequently Asked <span className="text-primary">Questions</span>
+            IPTV Trends <span className="text-primary">FAQ</span> - Frequently Asked Questions
           </h2>
           <p className="mt-4 text-pretty text-muted-foreground">
-            Everything you need to know about IPTV Trends
+            Everything you need to know about IPTV Trends subscription, setup, pricing, and features. Get answers to the most common questions about our IPTV service.
           </p>
         </motion.div>
 

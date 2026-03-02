@@ -7,8 +7,8 @@ import Link from "next/link"
 
 const navLinks = [
   { label: "Home", href: "#home" },
-  { label: "Reseller", href: "#reseller" },
-  { label: "Blog", href: "#" },
+  { label: "IPTV Pricing", href: "#pricing" },
+  { label: "IPTV Reseller", href: "#reseller" },
   { label: "Contact Us", href: "https://wa.me/212710141872" },
 ]
 
@@ -98,7 +98,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="neon-glow rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-all hover:brightness-110"
             >
-              Get Access
+              Buy IPTV
             </Link>
           </div>
 
@@ -154,7 +154,7 @@ export default function Navbar() {
                 rel="noopener noreferrer"
                 className="neon-glow mt-2 rounded-lg bg-primary px-4 py-2.5 text-center text-sm font-semibold text-primary-foreground"
               >
-                Get Access
+                Buy IPTV
               </Link>
             </div>
           </motion.div>

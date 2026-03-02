@@ -26,32 +26,32 @@ export default function Hero() {
         >
           <Zap className="h-4 w-4 text-primary" />
           <span className="text-sm font-medium text-primary">
-            Premium 4K Streaming - No Buffering
+            #1 Best IPTV Service 2026 - Buffer-Free 4K Streaming
           </span>
         </motion.div>
 
-        {/* Headline */}
+        {/* Headline - H1 with primary keyword */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-balance text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl"
         >
-          The Ultimate 4K{" "}
-          <span className="text-primary">Entertainment</span> Hub.
+          IPTV Trends:{" "}
+          <span className="text-primary">Premium IPTV Subscription</span>
           <br />
-          <span className="text-muted-foreground">No Buffering. No Limits.</span>
+          <span className="text-muted-foreground">With 21,000+ Live Channels in 4K</span>
         </motion.h1>
 
-        {/* Sub-headline */}
+        {/* Sub-headline with LSI keywords */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mx-auto mt-6 max-w-2xl text-pretty text-lg text-muted-foreground sm:text-xl"
         >
-          Access 20,000+ Premium Channels and 60,000+ Movies & Series.
-          Works on all devices.
+          IPTV Trends is the best IPTV provider for streaming live TV, sports, movies, and series.
+          Enjoy 65,000+ VOD titles, anti-freeze technology, and 99.9% uptime on every device.
         </motion.p>
 
         {/* CTAs */}
@@ -68,38 +68,43 @@ export default function Hero() {
             className="neon-glow flex items-center gap-2 rounded-xl bg-primary px-8 py-4 text-base font-semibold text-primary-foreground transition-all hover:brightness-110"
           >
             <Zap className="h-5 w-5" />
-            Get Instant Access
+            Buy IPTV Subscription Now
           </Link>
 
           <Link
-            href="https://wa.me/212710141872?text=I%20want%20a%2024h%20free%20trial"
+            href="https://wa.me/212710141872?text=I%20want%20a%2024h%20free%20IPTV%20trial"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 rounded-xl border border-border px-8 py-4 text-base font-semibold text-foreground transition-all hover:border-primary/50 hover:bg-primary/5"
           >
             <Play className="h-5 w-5" />
-            Try 24h Free Trial
+            Try Free IPTV Trial - 24h
           </Link>
         </motion.div>
 
-        {/* Decorative device mockups text */}
+        {/* Supported devices - SEO friendly labels */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mt-16 flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground"
         >
-          {["Smart TV", "Firestick", "Android", "iOS", "MAG Box", "PC"].map(
-            (device) => (
-              <span
-                key={device}
-                className="flex items-center gap-2 rounded-full border border-border/50 px-4 py-2"
-              >
-                <span className="h-2 w-2 rounded-full bg-primary/60" />
-                {device}
-              </span>
-            )
-          )}
+          {[
+            "Smart TV IPTV",
+            "Firestick IPTV",
+            "Android IPTV",
+            "iOS IPTV",
+            "MAG Box IPTV",
+            "PC IPTV",
+          ].map((device) => (
+            <span
+              key={device}
+              className="flex items-center gap-2 rounded-full border border-border/50 px-4 py-2"
+            >
+              <span className="h-2 w-2 rounded-full bg-primary/60" />
+              {device}
+            </span>
+          ))}
         </motion.div>
       </div>
     </section>

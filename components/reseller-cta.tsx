@@ -22,12 +22,12 @@ export default function ResellerCTA() {
               <Briefcase className="h-7 w-7 text-primary" />
             </div>
             <h2 className="text-balance text-3xl font-bold text-foreground sm:text-4xl">
-              Start Your Own Business
+              Become an IPTV Trends <span className="text-primary">Reseller</span>
             </h2>
             <p className="mt-3 max-w-lg text-pretty text-muted-foreground">
-              Become an IPTV Trends Reseller today. Get wholesale pricing,
-              dedicated support, and a complete panel to manage your clients.
-              Build your own IPTV empire.
+              Start your own IPTV reseller business with IPTV Trends. Get wholesale IPTV pricing,
+              a dedicated reseller panel to manage your IPTV clients, and 24/7 priority support.
+              Join the fastest-growing IPTV reseller program in 2026.
             </p>
           </div>
 
@@ -37,7 +37,7 @@ export default function ResellerCTA() {
             rel="noopener noreferrer"
             className="neon-glow flex shrink-0 items-center gap-2 rounded-xl bg-primary px-8 py-4 text-base font-semibold text-primary-foreground transition-all hover:brightness-110"
           >
-            Visit Reseller Page
+            Join IPTV Reseller Program
             <ArrowRight className="h-5 w-5" />
           </Link>
         </div>

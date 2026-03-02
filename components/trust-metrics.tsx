@@ -5,10 +5,10 @@ import { motion, useInView } from "framer-motion"
 import { Tv, Film, Activity, Users } from "lucide-react"
 
 const metrics = [
-  { icon: Tv, value: 21000, suffix: "+", label: "Live Channels", prefix: "" },
-  { icon: Film, value: 65000, suffix: "+", label: "Movies & Series", prefix: "" },
-  { icon: Activity, value: 99.9, suffix: "%", label: "Uptime Guarantee", prefix: "" },
-  { icon: Users, value: 12000, suffix: "+", label: "Happy Clients", prefix: "" },
+  { icon: Tv, value: 21000, suffix: "+", label: "IPTV Live Channels", prefix: "" },
+  { icon: Film, value: 65000, suffix: "+", label: "VOD Movies & Series", prefix: "" },
+  { icon: Activity, value: 99.9, suffix: "%", label: "IPTV Server Uptime", prefix: "" },
+  { icon: Users, value: 12000, suffix: "+", label: "IPTV Subscribers Worldwide", prefix: "" },
 ]
 
 function AnimatedCounter({

@@ -6,51 +6,51 @@ import Link from "next/link"
 
 const plans = [
   {
-    name: "Basic",
-    subtitle: "1 Device",
+    name: "Basic IPTV",
+    subtitle: "1 Device - Best for Solo Viewers",
     price: "49.99",
     icon: Shield,
     popular: false,
     features: [
-      "4K / UHD Quality",
-      "21,000+ Live Channels",
-      "65,000+ VOD Library",
-      "All Sports Channels",
-      "Electronic Program Guide",
-      "24/7 Customer Support",
-      "Anti-Freeze Technology",
+      "4K / UHD IPTV Streaming Quality",
+      "21,000+ Live IPTV Channels",
+      "65,000+ VOD Movies & Series",
+      "All Sports Channels & PPV",
+      "Electronic Program Guide (EPG)",
+      "24/7 IPTV Customer Support",
+      "Anti-Freeze Streaming Technology",
     ],
   },
   {
-    name: "Pro",
-    subtitle: "2 Devices",
+    name: "Pro IPTV",
+    subtitle: "2 Devices - Most Popular IPTV Plan",
     price: "69.99",
     icon: Star,
     popular: true,
     features: [
-      "Everything in Basic",
-      "Multi-Room Streaming",
+      "Everything in Basic IPTV",
+      "Multi-Room IPTV Streaming",
       "Anti-Freeze v10 Engine",
-      "Priority VIP Support",
-      "Catch-Up TV (7 Days)",
-      "PPV Events Included",
-      "Instant Activation",
+      "Priority VIP IPTV Support",
+      "Catch-Up TV (7 Days Replay)",
+      "All PPV & Boxing Events",
+      "Instant IPTV Activation",
     ],
   },
   {
-    name: "Elite",
-    subtitle: "3 Devices",
+    name: "Elite IPTV",
+    subtitle: "3 Devices - Best Value IPTV Plan",
     price: "89.99",
     icon: Crown,
     popular: false,
     features: [
-      "Everything in Pro",
-      "Maximum Savings",
-      "Family Sharing Mode",
-      "Dedicated VIP Support",
+      "Everything in Pro IPTV",
+      "Best IPTV Value - Maximum Savings",
+      "Family IPTV Sharing Mode",
+      "Dedicated VIP IPTV Support",
       "Premium VOD First Access",
-      "Zero Downtime Guarantee",
-      "Custom Channel Lists",
+      "Zero Downtime IPTV Guarantee",
+      "Custom IPTV Channel Lists",
     ],
   },
 ]
@@ -69,12 +69,10 @@ export default function Pricing() {
           className="text-center"
         >
           <h2 className="text-balance text-3xl font-bold text-foreground sm:text-4xl">
-            Choose Your 1-Year{" "}
-            <span className="text-primary">Premium Access</span>
+            IPTV Trends <span className="text-primary">Subscription Plans</span> & Pricing 2026
           </h2>
           <p className="mt-4 text-pretty text-muted-foreground">
-            One payment. One year of unlimited entertainment. Cancel-free
-            simplicity.
+            Buy the best IPTV subscription at affordable prices. One payment covers a full year of premium IPTV streaming with 21,000+ channels, 65,000+ VOD, and anti-freeze technology included.
           </p>
         </motion.div>
 

@@ -12,18 +12,18 @@ const tabs = [
     steps: [
       {
         icon: Download,
-        title: "Download the App",
-        description: "Open your TV's app store and search for your preferred IPTV player (e.g., IPTV Smarters, TiviMate).",
+        title: "Download IPTV Player App",
+        description: "Open your Smart TV app store and install IPTV Smarters Pro, TiviMate, or any compatible IPTV player for your IPTV Trends subscription.",
       },
       {
         icon: Settings,
-        title: "Enter Your Credentials",
-        description: "Open the app and enter the login details we send you via WhatsApp after purchase.",
+        title: "Enter IPTV Trends Login",
+        description: "Open the IPTV player and enter the Xtream Codes login credentials we send via WhatsApp after you buy your IPTV Trends subscription.",
       },
       {
         icon: Play,
-        title: "Start Watching",
-        description: "Browse channels, pick your favorite content, and enjoy unlimited 4K streaming.",
+        title: "Start Watching IPTV",
+        description: "Browse 21,000+ IPTV channels, pick your favorite sports, movies, or series, and enjoy buffer-free 4K IPTV streaming.",
       },
     ],
   },
@@ -34,18 +34,18 @@ const tabs = [
     steps: [
       {
         icon: Download,
-        title: "Install Downloader App",
-        description: "Go to your Firestick settings, enable 'Apps from Unknown Sources', then install the Downloader app.",
+        title: "Install IPTV on Firestick",
+        description: "Go to Firestick settings, enable 'Apps from Unknown Sources', then install the Downloader app to sideload your IPTV Trends player.",
       },
       {
         icon: Settings,
-        title: "Download & Configure",
-        description: "Use the Downloader app to install your IPTV player. Enter the credentials we provide.",
+        title: "Configure IPTV Trends",
+        description: "Use the Downloader app to install IPTV Smarters Pro. Enter the IPTV Trends credentials we provide after purchase.",
       },
       {
         icon: Play,
-        title: "Enjoy Streaming",
-        description: "Launch the app and start watching your favorite channels and VOD content instantly.",
+        title: "Stream IPTV on Firestick",
+        description: "Launch the app and start streaming all 21,000+ IPTV Trends channels and VOD content on your Firestick instantly.",
       },
     ],
   },
@@ -56,18 +56,18 @@ const tabs = [
     steps: [
       {
         icon: Download,
-        title: "Download IPTV Player",
-        description: "Install IPTV Smarters Pro or TiviMate from the Google Play Store on your Android device or MAG box.",
+        title: "Download Android IPTV App",
+        description: "Install IPTV Smarters Pro or TiviMate from the Google Play Store on your Android device, tablet, or MAG box for IPTV Trends.",
       },
       {
         icon: Settings,
-        title: "Add Your Playlist",
-        description: "Open the app and add your M3U URL or Xtream Codes login that we provide after purchase.",
+        title: "Add IPTV Trends Playlist",
+        description: "Open the IPTV app and add your M3U URL or Xtream Codes login that IPTV Trends provides after your subscription purchase.",
       },
       {
         icon: Play,
-        title: "Stream Instantly",
-        description: "All channels and VOD content will load automatically. Enjoy lag-free streaming.",
+        title: "Stream IPTV on Android",
+        description: "All IPTV Trends channels and VOD content load automatically. Enjoy lag-free 4K IPTV streaming on Android.",
       },
     ],
   },
@@ -78,18 +78,18 @@ const tabs = [
     steps: [
       {
         icon: Download,
-        title: "Get the App",
-        description: "Download IPTV Smarters or GSE Smart IPTV from the Apple App Store on your iPhone, iPad, or Apple TV.",
+        title: "Get IPTV App for iOS",
+        description: "Download IPTV Smarters or GSE Smart IPTV from the Apple App Store on your iPhone, iPad, or Apple TV to use IPTV Trends.",
       },
       {
         icon: Settings,
-        title: "Login With Credentials",
-        description: "Open the app and enter the Xtream Codes API login details provided after your purchase.",
+        title: "Login to IPTV Trends",
+        description: "Open the IPTV app and enter the Xtream Codes API login details provided after your IPTV Trends subscription purchase.",
       },
       {
         icon: Play,
-        title: "Watch Anywhere",
-        description: "Stream on the go with your Apple device. All 21,000+ channels at your fingertips.",
+        title: "Watch IPTV on Apple Devices",
+        description: "Stream IPTV Trends on the go with your Apple device. All 21,000+ IPTV channels and 65,000+ VOD titles at your fingertips.",
       },
     ],
   },
@@ -109,10 +109,10 @@ export default function InstallationTabs() {
           className="text-center"
         >
           <h2 className="text-balance text-3xl font-bold text-foreground sm:text-4xl">
-            Easy Setup on <span className="text-primary">Any Device</span>
+            How to Set Up <span className="text-primary">IPTV Trends</span> on Any Device
           </h2>
           <p className="mt-4 text-pretty text-muted-foreground">
-            3 simple steps to start streaming. No technical skills required.
+            Install IPTV Trends in 3 easy steps on Smart TV, Firestick, Android, iOS, or MAG Box. No technical skills needed. Our IPTV setup guide works for IPTV Smarters, TiviMate, and all popular IPTV players.
           </p>
         </motion.div>
 
