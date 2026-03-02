@@ -28,7 +28,7 @@ export default function ComparisonTable() {
           className="text-center"
         >
           <h2 className="text-balance text-3xl font-bold text-foreground sm:text-4xl">
-            Why <span className="text-primary">TrendSiptv</span>?
+            Why <span className="text-primary">IPTV Trends</span>?
           </h2>
           <p className="mt-4 text-pretty text-muted-foreground">
             See how we compare to other IPTV providers
@@ -50,7 +50,7 @@ export default function ComparisonTable() {
                     Features
                   </th>
                   <th className="px-6 py-4 text-center text-sm font-semibold text-primary">
-                    TrendSiptv
+                    IPTV Trends
                   </th>
                   <th className="px-6 py-4 text-center text-sm font-medium text-muted-foreground">
                     Others

@@ -8,7 +8,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <span className="text-xl font-bold text-foreground">
-              Trend<span className="text-primary">Siptv</span>
+              IPTV<span className="text-primary"> Trends</span>
             </span>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
               The ultimate 4K entertainment hub. Premium IPTV service with
@@ -86,7 +86,7 @@ export default function Footer() {
 
         <div className="mt-10 border-t border-border/30 pt-6 text-center">
           <p className="text-xs text-muted-foreground">
-            {"\u00A9"} {new Date().getFullYear()} TrendSiptv. All rights reserved.
+            {"\u00A9"} {new Date().getFullYear()} IPTV Trends. All rights reserved.
           </p>
         </div>
       </div>

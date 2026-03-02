@@ -4,40 +4,40 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* TrendSiptv Dark Theme - Deep Black + Electric Blue */
-  --background: oklch(0.07 0.005 260);
+  /* IPTV Trends Dark Theme - Deep Black + Emerald Green */
+  --background: oklch(0.07 0.005 160);
   --foreground: oklch(0.96 0 0);
-  --card: oklch(0.14 0.01 260);
+  --card: oklch(0.14 0.01 160);
   --card-foreground: oklch(0.96 0 0);
-  --popover: oklch(0.14 0.01 260);
+  --popover: oklch(0.14 0.01 160);
   --popover-foreground: oklch(0.96 0 0);
-  --primary: oklch(0.62 0.19 260);
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.2 0.02 260);
+  --primary: oklch(0.64 0.17 160);
+  --primary-foreground: oklch(0.07 0.005 160);
+  --secondary: oklch(0.2 0.02 160);
   --secondary-foreground: oklch(0.9 0 0);
-  --muted: oklch(0.2 0.01 260);
-  --muted-foreground: oklch(0.65 0.02 260);
-  --accent: oklch(0.62 0.19 260);
-  --accent-foreground: oklch(1 0 0);
+  --muted: oklch(0.2 0.01 160);
+  --muted-foreground: oklch(0.65 0.02 160);
+  --accent: oklch(0.64 0.17 160);
+  --accent-foreground: oklch(0.07 0.005 160);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.25 0.02 260);
-  --input: oklch(0.25 0.02 260);
-  --ring: oklch(0.62 0.19 260);
-  --chart-1: oklch(0.62 0.19 260);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
+  --border: oklch(0.25 0.02 160);
+  --input: oklch(0.25 0.02 160);
+  --ring: oklch(0.64 0.17 160);
+  --chart-1: oklch(0.64 0.17 160);
+  --chart-2: oklch(0.6 0.118 140);
+  --chart-3: oklch(0.398 0.07 180);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
   --radius: 0.75rem;
-  --sidebar: oklch(0.1 0.005 260);
+  --sidebar: oklch(0.1 0.005 160);
   --sidebar-foreground: oklch(0.96 0 0);
-  --sidebar-primary: oklch(0.62 0.19 260);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.2 0.02 260);
+  --sidebar-primary: oklch(0.64 0.17 160);
+  --sidebar-primary-foreground: oklch(0.07 0.005 160);
+  --sidebar-accent: oklch(0.2 0.02 160);
   --sidebar-accent-foreground: oklch(0.96 0 0);
-  --sidebar-border: oklch(0.25 0.02 260);
-  --sidebar-ring: oklch(0.62 0.19 260);
+  --sidebar-border: oklch(0.25 0.02 160);
+  --sidebar-ring: oklch(0.64 0.17 160);
 }
 
 @theme inline {
@@ -92,11 +92,11 @@
 
 /* Neon glow for primary buttons */
 .neon-glow {
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5), 0 0 40px rgba(59, 130, 246, 0.25), 0 0 60px rgba(59, 130, 246, 0.1);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.5), 0 0 40px rgba(16, 185, 129, 0.25), 0 0 60px rgba(16, 185, 129, 0.1);
 }
 
 .neon-glow:hover {
-  box-shadow: 0 0 30px rgba(59, 130, 246, 0.7), 0 0 60px rgba(59, 130, 246, 0.35), 0 0 90px rgba(59, 130, 246, 0.15);
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.7), 0 0 60px rgba(16, 185, 129, 0.35), 0 0 90px rgba(16, 185, 129, 0.15);
 }
 
 /* Glassmorphism utility */
@@ -119,8 +119,8 @@
 
 /* Animated counter */
 @keyframes counter-glow {
-  0%, 100% { text-shadow: 0 0 10px rgba(59, 130, 246, 0.3); }
-  50% { text-shadow: 0 0 20px rgba(59, 130, 246, 0.6); }
+  0%, 100% { text-shadow: 0 0 10px rgba(16, 185, 129, 0.3); }
+  50% { text-shadow: 0 0 20px rgba(16, 185, 129, 0.6); }
 }
 
 .counter-glow {
@@ -142,5 +142,5 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3b82f6;
+  background: #10b981;
 }

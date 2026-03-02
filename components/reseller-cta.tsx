@@ -25,7 +25,7 @@ export default function ResellerCTA() {
               Start Your Own Business
             </h2>
             <p className="mt-3 max-w-lg text-pretty text-muted-foreground">
-              Become a TrendSiptv Reseller today. Get wholesale pricing,
+              Become an IPTV Trends Reseller today. Get wholesale pricing,
               dedicated support, and a complete panel to manage your clients.
               Build your own IPTV empire.
             </p>

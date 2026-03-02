@@ -10,9 +10,9 @@ import {
 
 const faqs = [
   {
-    question: "What is TrendSiptv?",
+    question: "What is IPTV Trends?",
     answer:
-      "TrendSiptv is a premium IPTV service that provides access to 21,000+ live TV channels and 65,000+ movies and series in 4K/UHD quality. We support all major devices including Smart TVs, Firestick, Android, iOS, MAG boxes, and PCs.",
+      "IPTV Trends is a premium IPTV service that provides access to 21,000+ live TV channels and 65,000+ movies and series in 4K/UHD quality. We support all major devices including Smart TVs, Firestick, Android, iOS, MAG boxes, and PCs.",
   },
   {
     question: "How fast is the activation?",
@@ -35,9 +35,9 @@ const faqs = [
       "We accept a variety of payment methods including credit/debit cards, PayPal, cryptocurrency, and bank transfers. Contact us on WhatsApp for the most convenient payment option for you.",
   },
   {
-    question: "Can I use TrendSiptv on multiple devices?",
+    question: "Can I use IPTV Trends on multiple devices?",
     answer:
-      "Yes! Depending on your plan, you can use TrendSiptv on 1 to 3 devices simultaneously. Our Pro plan supports 2 devices and our Elite plan supports 3 devices for the whole family.",
+      "Yes! Depending on your plan, you can use IPTV Trends on 1 to 3 devices simultaneously. Our Pro plan supports 2 devices and our Elite plan supports 3 devices for the whole family.",
   },
   {
     question: "What is Anti-Freeze Technology?",
@@ -45,7 +45,7 @@ const faqs = [
       "Our proprietary Anti-Freeze v10 engine ensures buffer-free streaming by automatically optimizing your connection and switching to the best available server. This means smooth, uninterrupted viewing even during peak hours.",
   },
   {
-    question: "How do I set up TrendSiptv?",
+    question: "How do I set up IPTV Trends?",
     answer:
       "Setup is simple and takes under 5 minutes. After purchasing, we send you login credentials. Download a compatible IPTV player on your device, enter the credentials, and you're ready to stream. We provide step-by-step guides for every device.",
   },
@@ -65,7 +65,7 @@ export default function FAQ() {
             Frequently Asked <span className="text-primary">Questions</span>
           </h2>
           <p className="mt-4 text-pretty text-muted-foreground">
-            Everything you need to know about TrendSiptv
+            Everything you need to know about IPTV Trends
           </p>
         </motion.div>
 

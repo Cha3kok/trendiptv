@@ -36,7 +36,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="#home" className="flex items-center gap-2">
             <span className="text-xl font-bold text-foreground">
-              Trend<span className="text-primary">Siptv</span>
+              IPTV<span className="text-primary"> Trends</span>
             </span>
           </Link>
 

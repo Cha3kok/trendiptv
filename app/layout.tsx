@@ -7,10 +7,10 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono' })
 
 export const metadata: Metadata = {
-  title: 'TrendSiptv - The Ultimate 4K Entertainment Hub',
+  title: 'IPTV Trends - The Ultimate 4K Entertainment Hub',
   description:
-    'Access 20,000+ Premium Channels and 60,000+ Movies & Series. No Buffering. No Limits. Works on all devices.',
-  keywords: ['IPTV', 'streaming', '4K', 'channels', 'movies', 'series', 'entertainment'],
+    'IPTV Trends: Access 20,000+ Premium Channels and 60,000+ Movies & Series. No Buffering. No Limits. Works on all devices.',
+  keywords: ['IPTV Trends', 'IPTV', 'iptv trends', 'streaming', '4K', 'channels', 'movies', 'series', 'entertainment', 'best IPTV service'],
 }
 
 export const viewport: Viewport = {
