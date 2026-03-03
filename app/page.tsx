@@ -42,7 +42,7 @@ const faqJsonLd = {
       name: "How much does an IPTV Trends subscription cost?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "IPTV Trends offers three affordable plans: Basic IPTV at $49.99/year, Pro IPTV at $69.99/year, and Elite IPTV at $89.99/year. All plans include 21,000+ channels, 65,000+ VOD, 4K quality, and anti-freeze technology.",
+        text: "IPTV Trends offers three affordable plans: Basic IPTV at $79.99/year, Pro IPTV at $119.99/year, and Elite IPTV at $149.99/year. All plans include 21,000+ channels, 65,000+ VOD, 4K quality, and anti-freeze technology.",
       },
     },
     {
@@ -83,7 +83,7 @@ const productJsonLd = {
     {
       "@type": "Offer",
       name: "Basic IPTV Plan",
-      price: "49.99",
+      price: "79.99",
       priceCurrency: "USD",
       availability: "https://schema.org/InStock",
       priceValidUntil: "2026-12-31",
@@ -91,7 +91,7 @@ const productJsonLd = {
     {
       "@type": "Offer",
       name: "Pro IPTV Plan",
-      price: "69.99",
+      price: "119.99",
       priceCurrency: "USD",
       availability: "https://schema.org/InStock",
       priceValidUntil: "2026-12-31",
@@ -99,7 +99,7 @@ const productJsonLd = {
     {
       "@type": "Offer",
       name: "Elite IPTV Plan",
-      price: "89.99",
+      price: "149.99",
       priceCurrency: "USD",
       availability: "https://schema.org/InStock",
       priceValidUntil: "2026-12-31",

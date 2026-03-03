@@ -8,7 +8,7 @@ const plans = [
   {
     name: "Basic IPTV",
     subtitle: "1 Device - Best for Solo Viewers",
-    price: "49.99",
+    price: "79.99",
     icon: Shield,
     popular: false,
     features: [
@@ -24,7 +24,7 @@ const plans = [
   {
     name: "Pro IPTV",
     subtitle: "2 Devices - Most Popular IPTV Plan",
-    price: "69.99",
+    price: "119.99",
     icon: Star,
     popular: true,
     features: [
@@ -40,7 +40,7 @@ const plans = [
   {
     name: "Elite IPTV",
     subtitle: "3 Devices - Best Value IPTV Plan",
-    price: "89.99",
+    price: "149.99",
     icon: Crown,
     popular: false,
     features: [
