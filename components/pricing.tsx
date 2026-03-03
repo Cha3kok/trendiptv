@@ -133,7 +133,7 @@ export default function Pricing() {
                     : "border border-border text-foreground hover:border-primary/50 hover:bg-primary/5"
                 }`}
               >
-                Order via WhatsApp
+                Order Now
               </Link>
             </motion.div>
           ))}
