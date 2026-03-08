@@ -83,7 +83,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li className="text-sm text-muted-foreground">
-                24/7 IPTV Customer Support
+                24/7 Customer Support
               </li>
               <li className="text-sm text-muted-foreground">
                 7-Day Money Back Guarantee
