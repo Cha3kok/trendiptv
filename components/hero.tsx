@@ -62,7 +62,7 @@ export default function Hero() {
           className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
           <Link
-            href="https://wa.me/212710141872"
+            href="https://wa.me/212707711512"
             target="_blank"
             rel="noopener noreferrer"
             className="neon-glow flex items-center gap-2 rounded-xl bg-primary px-8 py-4 text-base font-semibold text-primary-foreground transition-all hover:brightness-110"
@@ -72,13 +72,13 @@ export default function Hero() {
           </Link>
 
           <Link
-            href="https://wa.me/212710141872?text=I%20want%20a%2024h%20free%20IPTV%20trial"
+            href="https://wa.me/212707711512?text=I%20want%20a%2024h%20free%20IPTV%20trial"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 rounded-xl border border-border px-8 py-4 text-base font-semibold text-foreground transition-all hover:border-primary/50 hover:bg-primary/5"
           >
             <Play className="h-5 w-5" />
-            Try Free IPTV Trial - 24h
+            Try Free IPTV Trial - 3h
           </Link>
         </motion.div>
 

@@ -32,7 +32,7 @@ export default function ResellerCTA() {
           </div>
 
           <Link
-            href="https://wa.me/212710141872?text=I%20want%20to%20become%20a%20reseller"
+            href="https://wa.me/212707711512?text=I%20want%20to%20become%20a%20reseller"
             target="_blank"
             rel="noopener noreferrer"
             className="neon-glow flex shrink-0 items-center gap-2 rounded-xl bg-primary px-8 py-4 text-base font-semibold text-primary-foreground transition-all hover:brightness-110"

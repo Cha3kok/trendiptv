@@ -13,7 +13,7 @@ export default function WhatsAppButton() {
       className="fixed bottom-6 right-6 z-50"
     >
       <Link
-        href="https://wa.me/212710141872"
+        href="https://wa.me/212707711512"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contact us on WhatsApp"
