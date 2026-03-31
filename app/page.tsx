@@ -13,15 +13,44 @@ import WhatsAppButton from "@/components/whatsapp-button"
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://www.trendsiptv.com/#organization",
   name: "IPTV Trends",
-  url: "https://iptvtrends.com",
+  url: "https://www.trendsiptv.com",
+  logo: {
+    "@type": "ImageObject",
+    url: "https://www.trendsiptv.com/icon.svg",
+    width: 512,
+    height: 512,
+  },
   description:
     "IPTV Trends is the best premium IPTV subscription service in 2026. Stream 21,000+ live channels and 65,000+ movies & series in 4K UHD on any device.",
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+212-710-141872",
+    telephone: "+212-707-711512",
     contactType: "customer service",
     availableLanguage: ["English", "French", "Arabic", "Spanish"],
+  },
+  sameAs: [
+    "https://wa.me/212707711512",
+  ],
+}
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://www.trendsiptv.com/#website",
+  name: "IPTV Trends",
+  url: "https://www.trendsiptv.com",
+  publisher: {
+    "@id": "https://www.trendsiptv.com/#organization",
+  },
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: "https://www.trendsiptv.com/?q={search_term_string}",
+    },
+    "query-input": "required name=search_term_string",
   },
 }
 
@@ -42,7 +71,7 @@ const faqJsonLd = {
       name: "How much does an IPTV Trends subscription cost?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "IPTV Trends offers three affordable plans: Basic IPTV at $79.99/year, Pro IPTV at $119.99/year, and Elite IPTV at $149.99/year. All plans include 21,000+ channels, 65,000+ VOD, 4K quality, and anti-freeze technology.",
+        text: "IPTV Trends offers flexible plans starting from $19.99/month. Plans include: 1 Month at $19.99, 3 Months at $39.99, 6 Months at $55.99, 12 Months at $79.99, and 24 Months at $129.99. All plans include 21,000+ channels, 65,000+ VOD, 4K quality, and anti-freeze technology.",
       },
     },
     {
@@ -79,30 +108,52 @@ const productJsonLd = {
   description:
     "Best IPTV subscription service with 21,000+ live channels, 65,000+ VOD, 4K UHD streaming, anti-freeze technology, and 99.9% uptime.",
   brand: { "@type": "Brand", name: "IPTV Trends" },
+  image: "https://www.trendsiptv.com/opengraph-image",
   offers: [
     {
       "@type": "Offer",
-      name: "Basic IPTV Plan",
+      name: "1 Month IPTV Plan",
+      price: "19.99",
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+      priceValidUntil: "2026-12-31",
+      url: "https://www.trendsiptv.com/#pricing",
+    },
+    {
+      "@type": "Offer",
+      name: "3 Months IPTV Plan",
+      price: "39.99",
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+      priceValidUntil: "2026-12-31",
+      url: "https://www.trendsiptv.com/#pricing",
+    },
+    {
+      "@type": "Offer",
+      name: "6 Months IPTV Plan",
+      price: "55.99",
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+      priceValidUntil: "2026-12-31",
+      url: "https://www.trendsiptv.com/#pricing",
+    },
+    {
+      "@type": "Offer",
+      name: "12 Months IPTV Plan",
       price: "79.99",
       priceCurrency: "USD",
       availability: "https://schema.org/InStock",
       priceValidUntil: "2026-12-31",
+      url: "https://www.trendsiptv.com/#pricing",
     },
     {
       "@type": "Offer",
-      name: "Pro IPTV Plan",
-      price: "119.99",
+      name: "24 Months IPTV Plan",
+      price: "129.99",
       priceCurrency: "USD",
       availability: "https://schema.org/InStock",
       priceValidUntil: "2026-12-31",
-    },
-    {
-      "@type": "Offer",
-      name: "Elite IPTV Plan",
-      price: "149.99",
-      priceCurrency: "USD",
-      availability: "https://schema.org/InStock",
-      priceValidUntil: "2026-12-31",
+      url: "https://www.trendsiptv.com/#pricing",
     },
   ],
   aggregateRating: {
@@ -120,6 +171,10 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
       />
       <script
         type="application/ld+json"

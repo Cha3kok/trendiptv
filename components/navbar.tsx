@@ -4,11 +4,14 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X, ChevronDown, Globe } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
+import PromoBanner from "@/components/promo-banner"
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "IPTV Pricing", href: "#pricing" },
-  { label: "IPTV Reseller", href: "#reseller" },
+  { label: "Home", href: "/" },
+  { label: "IPTV Plans", href: "/products" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "Reseller", href: "/#reseller" },
   { label: "Contact Us", href: "https://wa.me/212707711512" },
 ]
 
@@ -29,15 +32,21 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed top-0 left-0 right-0 z-50 glass"
+      className="fixed top-0 left-0 right-0 z-50"
     >
+      <PromoBanner />
+      <div className="glass">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="#home" className="flex items-center gap-2">
-            <span className="text-xl font-bold text-foreground">
-              IPTV<span className="text-primary"> Trends</span>
-            </span>
+          <Link href="/" className="flex items-center gap-2">
+            <Image
+              src="/logo.svg"
+              alt="IPTV Trends"
+              width={140}
+              height={35}
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -160,6 +169,7 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
+      </div>
     </motion.nav>
   )
 }

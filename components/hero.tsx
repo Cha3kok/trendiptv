@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 pt-16"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 pt-28"
     >
       {/* Background gradient effects */}
       <div className="pointer-events-none absolute inset-0">

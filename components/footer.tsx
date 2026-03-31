@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-border/30 px-4 py-12">
       <div className="mx-auto max-w-6xl">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
           {/* Brand */}
           <div>
             <span className="text-xl font-bold text-foreground">
@@ -25,9 +25,11 @@ export default function Footer() {
             </h4>
             <ul className="flex flex-col gap-2.5">
               {[
-                { label: "IPTV Trends Home", href: "#home" },
-                { label: "IPTV Subscription Pricing", href: "#pricing" },
-                { label: "IPTV Reseller Program", href: "#reseller" },
+                { label: "IPTV Trends Home", href: "/" },
+                { label: "IPTV Subscription Plans", href: "/products" },
+                { label: "IPTV Subscription Pricing", href: "/#pricing" },
+                { label: "IPTV FAQ", href: "/#faq" },
+                { label: "IPTV Reseller Program", href: "/#reseller" },
                 { label: "Contact IPTV Trends", href: "https://wa.me/212707711512" },
                 { label: "Free IPTV Trial", href: "https://wa.me/212707711512?text=I%20want%20a%2024h%20free%20IPTV%20trial" },
               ].map((link) => (
@@ -66,6 +68,30 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Legal */}
+          <div>
+            <h4 className="mb-4 text-sm font-semibold text-foreground">
+              Legal
+            </h4>
+            <ul className="flex flex-col gap-2.5">
+              {[
+                { label: "Privacy Policy", href: "/privacy-policy" },
+                { label: "Terms of Service", href: "/terms-of-service" },
+                { label: "Refund Policy", href: "/refund-policy" },
+                { label: "Cookie Policy", href: "/cookie-policy" },
+              ].map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
           {/* Contact */}
           <div>
             <h4 className="mb-4 text-sm font-semibold text-foreground">
@@ -95,11 +121,26 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* SEO-rich footer text */}
-        <div className="mt-10 border-t border-border/30 pt-6">
-          <p className="text-center text-xs leading-relaxed text-muted-foreground">
-            {"\u00A9"} {new Date().getFullYear()} IPTV Trends - Best Premium IPTV Subscription Service. All rights reserved. IPTV Trends provides the highest quality IPTV streaming experience with 21,000+ live channels, 65,000+ movies and series, 4K UHD quality, anti-freeze technology, and support for Smart TV, Firestick, Android, iOS, and MAG Box. IPTV Trends is not affiliated with any third-party streaming platforms.
+        <div className="mt-10 border-t border-border/30 pt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-between">
+          <p className="text-center text-xs text-muted-foreground sm:text-left">
+            {"\u00A9"} {new Date().getFullYear()} IPTV Trends. All rights reserved. Not affiliated with any third-party streaming platforms.
           </p>
+          <div className="flex flex-wrap justify-center gap-4 sm:justify-end">
+            {[
+              { label: "Privacy Policy", href: "/privacy-policy" },
+              { label: "Terms of Service", href: "/terms-of-service" },
+              { label: "Refund Policy", href: "/refund-policy" },
+              { label: "Cookie Policy", href: "/cookie-policy" },
+            ].map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="text-xs text-muted-foreground transition-colors hover:text-foreground"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </footer>

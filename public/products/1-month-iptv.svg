@@ -1,0 +1,50 @@
+<svg width="800" height="450" viewBox="0 0 800 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="glow1" cx="50%" cy="48%" r="50%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#0a0f0d" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots1" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#10b981" fill-opacity="0.07"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="#0a0f0d"/>
+  <rect width="800" height="450" fill="url(#dots1)"/>
+  <rect width="800" height="450" fill="url(#glow1)"/>
+  <!-- Border -->
+  <rect x="16" y="16" width="768" height="418" rx="14" fill="none" stroke="#10b981" stroke-opacity="0.2" stroke-width="1"/>
+  <!-- Top label -->
+  <text x="32" y="50" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#10b981" fill-opacity="0.6" letter-spacing="3">IPTV TRENDS</text>
+  <!-- Plan type tag -->
+  <rect x="668" y="28" width="100" height="28" rx="6" fill="#10b981" fill-opacity="0.12"/>
+  <rect x="668" y="28" width="100" height="28" rx="6" fill="none" stroke="#10b981" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="718" y="47" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#10b981" text-anchor="middle">1 MONTH</text>
+  <!-- TV icon -->
+  <rect x="355" y="72" width="90" height="62" rx="7" fill="none" stroke="#10b981" stroke-width="2"/>
+  <line x1="389" y1="134" x2="389" y2="154" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+  <line x1="411" y1="134" x2="411" y2="154" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+  <line x1="375" y1="154" x2="425" y2="154" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+  <!-- Lightning bolt inside TV -->
+  <path d="M407 82 L393 102 L401 102 L393 122 L408 100 L400 100 L407 82Z" fill="#10b981"/>
+  <!-- Plan name -->
+  <text x="400" y="198" font-family="Inter, system-ui, sans-serif" font-size="46" font-weight="800" fill="#f5f5f5" text-anchor="middle" letter-spacing="-1.5">1 MONTH</text>
+  <text x="400" y="224" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="500" fill="#f5f5f5" fill-opacity="0.4" text-anchor="middle" letter-spacing="4">IPTV SUBSCRIPTION</text>
+  <!-- Price -->
+  <text x="400" y="294" font-family="Inter, system-ui, sans-serif" font-size="64" font-weight="800" fill="#10b981" text-anchor="middle" letter-spacing="-2">$19.99</text>
+  <text x="400" y="322" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#f5f5f5" fill-opacity="0.35" text-anchor="middle">one-time payment · cancel anytime</text>
+  <!-- Feature chips -->
+  <rect x="106" y="360" width="150" height="32" rx="16" fill="#10b981" fill-opacity="0.1"/>
+  <rect x="106" y="360" width="150" height="32" rx="16" fill="none" stroke="#10b981" stroke-opacity="0.25" stroke-width="1"/>
+  <circle cx="128" cy="376" r="4" fill="#10b981"/>
+  <text x="140" y="381" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="500" fill="#f5f5f5" fill-opacity="0.75">21K+ Channels</text>
+  <rect x="325" y="360" width="150" height="32" rx="16" fill="#10b981" fill-opacity="0.1"/>
+  <rect x="325" y="360" width="150" height="32" rx="16" fill="none" stroke="#10b981" stroke-opacity="0.25" stroke-width="1"/>
+  <circle cx="347" cy="376" r="4" fill="#10b981"/>
+  <text x="359" y="381" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="500" fill="#f5f5f5" fill-opacity="0.75">4K UHD Quality</text>
+  <rect x="544" y="360" width="150" height="32" rx="16" fill="#10b981" fill-opacity="0.1"/>
+  <rect x="544" y="360" width="150" height="32" rx="16" fill="none" stroke="#10b981" stroke-opacity="0.25" stroke-width="1"/>
+  <circle cx="566" cy="376" r="4" fill="#10b981"/>
+  <text x="578" y="381" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="500" fill="#f5f5f5" fill-opacity="0.75">Anti-Freeze Tech</text>
+  <!-- Bottom URL -->
+  <text x="400" y="432" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#10b981" fill-opacity="0.35" text-anchor="middle">www.trendsiptv.com</text>
+</svg>

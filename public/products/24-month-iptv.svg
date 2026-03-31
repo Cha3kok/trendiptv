@@ -1,0 +1,47 @@
+<svg width="800" height="450" viewBox="0 0 800 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="glow24" cx="50%" cy="48%" r="50%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#0a0f0d" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots24" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#10b981" fill-opacity="0.07"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="#0a0f0d"/>
+  <rect width="800" height="450" fill="url(#dots24)"/>
+  <rect width="800" height="450" fill="url(#glow24)"/>
+  <rect x="16" y="16" width="768" height="418" rx="14" fill="none" stroke="#10b981" stroke-opacity="0.25" stroke-width="1"/>
+  <text x="32" y="50" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#10b981" fill-opacity="0.6" letter-spacing="3">IPTV TRENDS</text>
+  <!-- Best Value badge -->
+  <rect x="622" y="24" width="158" height="32" rx="7" fill="#10b981" fill-opacity="0.15"/>
+  <rect x="622" y="24" width="158" height="32" rx="7" fill="none" stroke="#10b981" stroke-opacity="0.4" stroke-width="1"/>
+  <text x="701" y="45" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" fill="#10b981" text-anchor="middle" letter-spacing="1">♛ BEST VALUE</text>
+  <!-- Crown icon -->
+  <path d="M362 130 L374 98 L400 118 L426 98 L438 130 Z" fill="none" stroke="#10b981" stroke-width="2" stroke-linejoin="round"/>
+  <line x1="358" y1="140" x2="442" y2="140" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+  <!-- Crown jewels -->
+  <circle cx="374" cy="100" r="4" fill="#10b981"/>
+  <circle cx="400" cy="120" r="4" fill="#10b981"/>
+  <circle cx="426" cy="100" r="4" fill="#10b981"/>
+  <!-- Plan name -->
+  <text x="400" y="200" font-family="Inter, system-ui, sans-serif" font-size="46" font-weight="800" fill="#f5f5f5" text-anchor="middle" letter-spacing="-1.5">24 MONTHS</text>
+  <text x="400" y="226" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="500" fill="#f5f5f5" fill-opacity="0.4" text-anchor="middle" letter-spacing="4">IPTV SUBSCRIPTION</text>
+  <!-- Price -->
+  <text x="400" y="296" font-family="Inter, system-ui, sans-serif" font-size="64" font-weight="800" fill="#10b981" text-anchor="middle" letter-spacing="-2">$129.99</text>
+  <text x="400" y="324" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#f5f5f5" fill-opacity="0.35" text-anchor="middle">only $5.42/month · save 73% · best deal</text>
+  <!-- Feature chips -->
+  <rect x="66" y="362" width="170" height="32" rx="16" fill="#10b981" fill-opacity="0.1"/>
+  <rect x="66" y="362" width="170" height="32" rx="16" fill="none" stroke="#10b981" stroke-opacity="0.25" stroke-width="1"/>
+  <circle cx="88" cy="378" r="4" fill="#10b981"/>
+  <text x="100" y="383" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="500" fill="#f5f5f5" fill-opacity="0.75">Family Sharing</text>
+  <rect x="315" y="362" width="170" height="32" rx="16" fill="#10b981" fill-opacity="0.1"/>
+  <rect x="315" y="362" width="170" height="32" rx="16" fill="none" stroke="#10b981" stroke-opacity="0.25" stroke-width="1"/>
+  <circle cx="337" cy="378" r="4" fill="#10b981"/>
+  <text x="349" y="383" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="500" fill="#f5f5f5" fill-opacity="0.75">Custom Lists</text>
+  <rect x="564" y="362" width="170" height="32" rx="16" fill="#10b981" fill-opacity="0.1"/>
+  <rect x="564" y="362" width="170" height="32" rx="16" fill="none" stroke="#10b981" stroke-opacity="0.25" stroke-width="1"/>
+  <circle cx="586" cy="378" r="4" fill="#10b981"/>
+  <text x="598" y="383" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="500" fill="#f5f5f5" fill-opacity="0.75">VOD First Access</text>
+  <text x="400" y="432" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#10b981" fill-opacity="0.35" text-anchor="middle">www.trendsiptv.com</text>
+</svg>

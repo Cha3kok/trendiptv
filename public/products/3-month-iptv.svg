@@ -1,0 +1,43 @@
+<svg width="800" height="450" viewBox="0 0 800 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="glow3" cx="50%" cy="48%" r="50%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#0a0f0d" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots3" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#10b981" fill-opacity="0.07"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="#0a0f0d"/>
+  <rect width="800" height="450" fill="url(#dots3)"/>
+  <rect width="800" height="450" fill="url(#glow3)"/>
+  <rect x="16" y="16" width="768" height="418" rx="14" fill="none" stroke="#10b981" stroke-opacity="0.2" stroke-width="1"/>
+  <text x="32" y="50" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#10b981" fill-opacity="0.6" letter-spacing="3">IPTV TRENDS</text>
+  <rect x="658" y="28" width="110" height="28" rx="6" fill="#10b981" fill-opacity="0.12"/>
+  <rect x="658" y="28" width="110" height="28" rx="6" fill="none" stroke="#10b981" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="713" y="47" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" fill="#10b981" text-anchor="middle">3 MONTHS</text>
+  <!-- Shield icon -->
+  <path d="M400 68 L360 84 L360 116 C360 138 378 156 400 162 C422 156 440 138 440 116 L440 84 Z" fill="none" stroke="#10b981" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Check inside shield -->
+  <path d="M385 114 L395 124 L416 102" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Plan name -->
+  <text x="400" y="206" font-family="Inter, system-ui, sans-serif" font-size="46" font-weight="800" fill="#f5f5f5" text-anchor="middle" letter-spacing="-1.5">3 MONTHS</text>
+  <text x="400" y="232" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="500" fill="#f5f5f5" fill-opacity="0.4" text-anchor="middle" letter-spacing="4">IPTV SUBSCRIPTION</text>
+  <!-- Price -->
+  <text x="400" y="302" font-family="Inter, system-ui, sans-serif" font-size="64" font-weight="800" fill="#10b981" text-anchor="middle" letter-spacing="-2">$39.99</text>
+  <text x="400" y="330" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#f5f5f5" fill-opacity="0.35" text-anchor="middle">only $13.33/month · save 33%</text>
+  <!-- Feature chips -->
+  <rect x="106" y="360" width="150" height="32" rx="16" fill="#10b981" fill-opacity="0.1"/>
+  <rect x="106" y="360" width="150" height="32" rx="16" fill="none" stroke="#10b981" stroke-opacity="0.25" stroke-width="1"/>
+  <circle cx="128" cy="376" r="4" fill="#10b981"/>
+  <text x="140" y="381" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="500" fill="#f5f5f5" fill-opacity="0.75">Full EPG Guide</text>
+  <rect x="325" y="360" width="150" height="32" rx="16" fill="#10b981" fill-opacity="0.1"/>
+  <rect x="325" y="360" width="150" height="32" rx="16" fill="none" stroke="#10b981" stroke-opacity="0.25" stroke-width="1"/>
+  <circle cx="347" cy="376" r="4" fill="#10b981"/>
+  <text x="359" y="381" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="500" fill="#f5f5f5" fill-opacity="0.75">Priority Support</text>
+  <rect x="544" y="360" width="150" height="32" rx="16" fill="#10b981" fill-opacity="0.1"/>
+  <rect x="544" y="360" width="150" height="32" rx="16" fill="none" stroke="#10b981" stroke-opacity="0.25" stroke-width="1"/>
+  <circle cx="566" cy="376" r="4" fill="#10b981"/>
+  <text x="578" y="381" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="500" fill="#f5f5f5" fill-opacity="0.75">Save 33%</text>
+  <text x="400" y="432" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#10b981" fill-opacity="0.35" text-anchor="middle">www.trendsiptv.com</text>
+</svg>

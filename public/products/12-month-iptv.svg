@@ -1,0 +1,48 @@
+<svg width="800" height="450" viewBox="0 0 800 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="glow12" cx="50%" cy="48%" r="55%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#0a0f0d" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="iconGlow12" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots12" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#10b981" fill-opacity="0.09"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="#0a0f0d"/>
+  <rect width="800" height="450" fill="url(#dots12)"/>
+  <rect width="800" height="450" fill="url(#glow12)"/>
+  <!-- Stronger border for best seller -->
+  <rect x="16" y="16" width="768" height="418" rx="14" fill="none" stroke="#10b981" stroke-opacity="0.4" stroke-width="1.5"/>
+  <text x="32" y="50" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#10b981" fill-opacity="0.7" letter-spacing="3">IPTV TRENDS</text>
+  <!-- Best Seller badge -->
+  <rect x="622" y="24" width="158" height="32" rx="7" fill="#10b981"/>
+  <text x="701" y="45" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="700" fill="#0a0f0d" text-anchor="middle" letter-spacing="1">★ BEST SELLER</text>
+  <!-- Glow circle behind star -->
+  <circle cx="400" cy="116" r="52" fill="url(#iconGlow12)"/>
+  <!-- Star icon -->
+  <path d="M400 72 L410 98 L438 98 L416 114 L424 140 L400 126 L376 140 L384 114 L362 98 L390 98 Z" fill="none" stroke="#10b981" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Plan name -->
+  <text x="400" y="208" font-family="Inter, system-ui, sans-serif" font-size="46" font-weight="800" fill="#f5f5f5" text-anchor="middle" letter-spacing="-1.5">12 MONTHS</text>
+  <text x="400" y="234" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="500" fill="#f5f5f5" fill-opacity="0.4" text-anchor="middle" letter-spacing="4">IPTV SUBSCRIPTION</text>
+  <!-- Price -->
+  <text x="400" y="304" font-family="Inter, system-ui, sans-serif" font-size="64" font-weight="800" fill="#10b981" text-anchor="middle" letter-spacing="-2">$79.99</text>
+  <text x="400" y="332" font-family="Inter, system-ui, sans-serif" font-size="14" fill="#f5f5f5" fill-opacity="0.35" text-anchor="middle">only $6.67/month · save 67% · most popular</text>
+  <!-- Feature chips -->
+  <rect x="66" y="362" width="170" height="32" rx="16" fill="#10b981" fill-opacity="0.12"/>
+  <rect x="66" y="362" width="170" height="32" rx="16" fill="none" stroke="#10b981" stroke-opacity="0.3" stroke-width="1"/>
+  <circle cx="88" cy="378" r="4" fill="#10b981"/>
+  <text x="100" y="383" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="500" fill="#f5f5f5" fill-opacity="0.8">Anti-Freeze v10</text>
+  <rect x="315" y="362" width="170" height="32" rx="16" fill="#10b981" fill-opacity="0.12"/>
+  <rect x="315" y="362" width="170" height="32" rx="16" fill="none" stroke="#10b981" stroke-opacity="0.3" stroke-width="1"/>
+  <circle cx="337" cy="378" r="4" fill="#10b981"/>
+  <text x="349" y="383" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="500" fill="#f5f5f5" fill-opacity="0.8">VIP Support</text>
+  <rect x="564" y="362" width="170" height="32" rx="16" fill="#10b981" fill-opacity="0.12"/>
+  <rect x="564" y="362" width="170" height="32" rx="16" fill="none" stroke="#10b981" stroke-opacity="0.3" stroke-width="1"/>
+  <circle cx="586" cy="378" r="4" fill="#10b981"/>
+  <text x="598" y="383" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="500" fill="#f5f5f5" fill-opacity="0.8">Full VOD Library</text>
+  <text x="400" y="432" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#10b981" fill-opacity="0.4" text-anchor="middle">www.trendsiptv.com</text>
+</svg>

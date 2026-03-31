@@ -1,0 +1,22 @@
+{
+  "name": "IPTV Trends",
+  "short_name": "IPTV Trends",
+  "description": "Premium IPTV subscription with 21,000+ live channels and 65,000+ movies in 4K UHD.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#34d399",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

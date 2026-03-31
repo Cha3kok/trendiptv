@@ -17,7 +17,7 @@ const faqs = [
   {
     question: "How much does an IPTV Trends subscription cost?",
     answer:
-      "IPTV Trends offers three affordable subscription plans: Basic IPTV at $49.99/year for 1 device, Pro IPTV at $69.99/year for 2 devices (our most popular plan), and Elite IPTV at $89.99/year for 3 devices. All IPTV Trends plans include 21,000+ live channels, 65,000+ VOD, 4K quality, anti-freeze technology, and 24/7 customer support. That is less than $4.17/month for premium IPTV service.",
+      "IPTV Trends offers flexible subscription plans to fit every budget: 1 Month at $19.99, 3 Months at $39.99, 6 Months at $55.99, 12 Months at $79.99, and 24 Months at $129.99. All plans include 21,000+ live channels, 65,000+ VOD, 4K quality, anti-freeze technology, and 24/7 customer support. The 12-month plan saves you over 50% compared to the monthly rate.",
   },
   {
     question: "Does IPTV Trends offer a free IPTV trial?",
@@ -37,7 +37,7 @@ const faqs = [
   {
     question: "Can I use IPTV Trends on multiple devices at the same time?",
     answer:
-      "Yes! IPTV Trends supports multi-device IPTV streaming depending on your plan. The Basic IPTV plan supports 1 device, the Pro IPTV plan supports 2 simultaneous devices, and the Elite IPTV plan supports 3 devices streaming at the same time - perfect for families who want to share one IPTV Trends subscription.",
+      "Yes! IPTV Trends supports multi-device IPTV streaming. Contact us on WhatsApp to ask about multi-connection options for your plan — perfect for families who want to share one IPTV Trends subscription on Smart TV, Firestick, Android, and iOS at the same time.",
   },
   {
     question: "What is IPTV Trends Anti-Freeze Technology?",
@@ -63,7 +63,7 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <section className="relative px-4 py-20">
+    <section id="faq" className="relative px-4 py-20">
       <div className="mx-auto max-w-3xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
