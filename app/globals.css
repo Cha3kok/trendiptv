@@ -144,3 +144,149 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #10b981;
 }
+
+/* Blog article prose styles */
+.prose-blog {
+  color: oklch(0.8 0.01 160);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.prose-blog h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: oklch(0.96 0 0);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid oklch(0.25 0.02 160);
+}
+
+.prose-blog h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: oklch(0.96 0 0);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose-blog p {
+  margin-bottom: 1.25rem;
+}
+
+.prose-blog a {
+  color: oklch(0.64 0.17 160);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.prose-blog a:hover {
+  color: oklch(0.75 0.17 160);
+}
+
+.prose-blog ul,
+.prose-blog ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.prose-blog ul {
+  list-style-type: disc;
+}
+
+.prose-blog ol {
+  list-style-type: decimal;
+}
+
+.prose-blog li {
+  margin-bottom: 0.5rem;
+}
+
+.prose-blog strong {
+  color: oklch(0.96 0 0);
+  font-weight: 600;
+}
+
+.prose-blog code {
+  background: oklch(0.14 0.01 160);
+  border: 1px solid oklch(0.25 0.02 160);
+  border-radius: 0.375rem;
+  padding: 0.125rem 0.375rem;
+  font-size: 0.875rem;
+  font-family: var(--font-mono);
+  color: oklch(0.64 0.17 160);
+}
+
+.prose-blog pre {
+  background: oklch(0.1 0.005 160);
+  border: 1px solid oklch(0.25 0.02 160);
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+.prose-blog pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: oklch(0.85 0.02 160);
+}
+
+.prose-blog blockquote {
+  border-left: 3px solid oklch(0.64 0.17 160);
+  padding-left: 1rem;
+  color: oklch(0.65 0.02 160);
+  font-style: italic;
+  margin-bottom: 1.25rem;
+}
+
+.prose-blog table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.prose-blog th {
+  background: oklch(0.14 0.01 160);
+  color: oklch(0.96 0 0);
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border: 1px solid oklch(0.25 0.02 160);
+}
+
+.prose-blog td {
+  padding: 0.65rem 1rem;
+  border: 1px solid oklch(0.25 0.02 160);
+  color: oklch(0.8 0.01 160);
+}
+
+.prose-blog tr:nth-child(even) td {
+  background: oklch(0.11 0.007 160);
+}
+
+.prose-blog img {
+  width: 100%;
+  border-radius: 0.875rem;
+  border: 1px solid oklch(0.25 0.02 160);
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.prose-blog figure {
+  margin: 2rem 0;
+}
+
+.prose-blog figure img {
+  margin: 0 0 0.5rem 0;
+}
+
+.prose-blog figcaption {
+  text-align: center;
+  font-size: 0.8rem;
+  color: oklch(0.55 0.02 160);
+  font-style: italic;
+}

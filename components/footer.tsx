@@ -27,6 +27,7 @@ export default function Footer() {
               {[
                 { label: "IPTV Trends Home", href: "/" },
                 { label: "IPTV Subscription Plans", href: "/products" },
+                { label: "IPTV Blog & Guides", href: "/blog" },
                 { label: "IPTV Subscription Pricing", href: "/#pricing" },
                 { label: "IPTV FAQ", href: "/#faq" },
                 { label: "IPTV Reseller Program", href: "/#reseller" },

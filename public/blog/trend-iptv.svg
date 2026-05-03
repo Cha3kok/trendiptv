@@ -1,0 +1,241 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#050f0a"/>
+      <stop offset="100%" style="stop-color:#071410"/>
+    </linearGradient>
+    <linearGradient id="screenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a2a1a"/>
+      <stop offset="100%" style="stop-color:#051510"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+    <linearGradient id="greenVert" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#065f46"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <radialGradient id="spotGreen" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:0"/>
+    </radialGradient>
+    <radialGradient id="spotLeft" cx="20%" cy="50%" r="40%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.08"/>
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Ambient light spots -->
+  <ellipse cx="600" cy="315" rx="500" ry="300" fill="url(#spotGreen)"/>
+  <ellipse cx="150" cy="315" rx="300" ry="250" fill="url(#spotLeft)"/>
+
+  <!-- Grid lines -->
+  <g opacity="0.04" stroke="#10b981" stroke-width="1">
+    <line x1="0" y1="105" x2="1200" y2="105"/>
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="315" x2="1200" y2="315"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="0" y1="525" x2="1200" y2="525"/>
+    <line x1="200" y1="0" x2="200" y2="630"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
+  </g>
+
+  <!-- ── MAIN TV SCREEN ── -->
+  <!-- Shadow -->
+  <rect x="196" y="104" width="520" height="320" rx="18" fill="#000" opacity="0.6"/>
+  <!-- Body -->
+  <rect x="190" y="98" width="520" height="320" rx="18" fill="#0d1f15" stroke="#1a4a2e" stroke-width="2"/>
+  <!-- Screen bezel -->
+  <rect x="204" y="112" width="492" height="282" rx="10" fill="url(#screenGrad)" stroke="#10b981" stroke-width="1" opacity="0.6"/>
+  <!-- Screen content bg -->
+  <rect x="210" y="118" width="480" height="270" rx="8" fill="#030d07"/>
+
+  <!-- Screen content: movie scene bars -->
+  <rect x="210" y="118" width="480" height="30" rx="0" fill="#000" opacity="0.9"/>
+  <rect x="210" y="358" width="480" height="30" rx="0" fill="#000" opacity="0.9"/>
+
+  <!-- Screen content: gradient scene -->
+  <rect x="210" y="148" width="480" height="210" fill="#071a0f"/>
+  <!-- Scenic background inside screen -->
+  <ellipse cx="450" cy="220" rx="200" ry="120" fill="#0a2e18" opacity="0.7"/>
+  <ellipse cx="350" cy="300" rx="150" ry="60" fill="#061a0c" opacity="0.8"/>
+
+  <!-- Streaming play button on screen -->
+  <circle cx="450" cy="253" r="36" fill="#10b981" opacity="0.15" filter="url(#glow)"/>
+  <circle cx="450" cy="253" r="28" fill="none" stroke="#10b981" stroke-width="2" opacity="0.8"/>
+  <polygon points="443,242 443,264 466,253" fill="#10b981" opacity="0.9" filter="url(#softGlow)"/>
+
+  <!-- Progress bar on screen -->
+  <rect x="230" y="340" width="440" height="3" rx="2" fill="#1a3a24"/>
+  <rect x="230" y="340" width="220" height="3" rx="2" fill="url(#green)"/>
+  <circle cx="450" cy="341" r="5" fill="#10b981" filter="url(#softGlow)"/>
+
+  <!-- Time labels -->
+  <text x="230" y="356" font-family="Arial,sans-serif" font-size="11" fill="#10b981" opacity="0.7">28:14</text>
+  <text x="640" y="356" font-family="Arial,sans-serif" font-size="11" fill="#555" text-anchor="end">1:02:30</text>
+
+  <!-- Quality badge on screen -->
+  <rect x="622" y="124" width="54" height="20" rx="4" fill="#10b981" opacity="0.9"/>
+  <text x="649" y="138" font-family="Arial,sans-serif" font-size="11" font-weight="bold" fill="#051a0e" text-anchor="middle">4K UHD</text>
+
+  <!-- TV stand -->
+  <rect x="430" y="418" width="40" height="20" rx="4" fill="#0d1f15" stroke="#1a4a2e" stroke-width="1"/>
+  <rect x="390" y="435" width="120" height="8" rx="4" fill="#0d1f15" stroke="#1a4a2e" stroke-width="1"/>
+
+  <!-- ── CHANNEL SIDEBAR ── -->
+  <rect x="756" y="88" width="175" height="390" rx="14" fill="#0a1e12" stroke="#1a4a2e" stroke-width="1.5"/>
+  <text x="843" y="112" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="#10b981" text-anchor="middle" opacity="0.9">CHANNELS</text>
+  <line x1="772" y1="120" x2="915" y2="120" stroke="#1a4a2e" stroke-width="1"/>
+
+  <!-- Channel items -->
+  <g font-family="Arial,sans-serif" font-size="12" fill="#a0c4b0">
+    <!-- Channel 1 - active -->
+    <rect x="764" y="128" width="159" height="34" rx="8" fill="#10b981" opacity="0.15"/>
+    <rect x="764" y="128" width="4" height="34" rx="2" fill="#10b981"/>
+    <circle cx="785" cy="145" r="10" fill="#1a3a24" stroke="#10b981" stroke-width="1"/>
+    <text x="785" y="149" font-size="9" fill="#10b981" text-anchor="middle" font-weight="bold">SP</text>
+    <text x="802" y="142" fill="#e0f0e8" font-size="11" font-weight="bold">beIN Sports</text>
+    <text x="802" y="155" fill="#6aad8a" font-size="9">HD • LIVE</text>
+    <circle cx="908" cy="145" r="4" fill="#10b981" filter="url(#softGlow)"/>
+
+    <!-- Channel 2 -->
+    <rect x="764" y="168" width="159" height="34" rx="8" fill="none"/>
+    <circle cx="785" cy="185" r="10" fill="#1a3a24" stroke="#2a5a3a" stroke-width="1"/>
+    <text x="785" y="189" font-size="9" fill="#888" text-anchor="middle">SK</text>
+    <text x="802" y="182" fill="#a0c4b0" font-size="11">Sky Sports</text>
+    <text x="802" y="195" fill="#4a7a5a" font-size="9">4K • LIVE</text>
+
+    <!-- Channel 3 -->
+    <rect x="764" y="208" width="159" height="34" rx="8" fill="none"/>
+    <circle cx="785" cy="225" r="10" fill="#1a3a24" stroke="#2a5a3a" stroke-width="1"/>
+    <text x="785" y="229" font-size="9" fill="#888" text-anchor="middle">ES</text>
+    <text x="802" y="222" fill="#a0c4b0" font-size="11">ESPN</text>
+    <text x="802" y="235" fill="#4a7a5a" font-size="9">HD • LIVE</text>
+
+    <!-- Channel 4 -->
+    <rect x="764" y="248" width="159" height="34" rx="8" fill="none"/>
+    <circle cx="785" cy="265" r="10" fill="#1a3a24" stroke="#2a5a3a" stroke-width="1"/>
+    <text x="785" y="269" font-size="9" fill="#888" text-anchor="middle">HB</text>
+    <text x="802" y="262" fill="#a0c4b0" font-size="11">HBO</text>
+    <text x="802" y="275" fill="#4a7a5a" font-size="9">4K • VOD</text>
+
+    <!-- Channel 5 -->
+    <rect x="764" y="288" width="159" height="34" rx="8" fill="none"/>
+    <circle cx="785" cy="305" r="10" fill="#1a3a24" stroke="#2a5a3a" stroke-width="1"/>
+    <text x="785" y="309" font-size="9" fill="#888" text-anchor="middle">AJ</text>
+    <text x="802" y="302" fill="#a0c4b0" font-size="11">Al Jazeera</text>
+    <text x="802" y="315" fill="#4a7a5a" font-size="9">HD • LIVE</text>
+
+    <!-- Channel 6 -->
+    <rect x="764" y="328" width="159" height="34" rx="8" fill="none"/>
+    <circle cx="785" cy="345" r="10" fill="#1a3a24" stroke="#2a5a3a" stroke-width="1"/>
+    <text x="785" y="349" font-size="9" fill="#888" text-anchor="middle">CN</text>
+    <text x="802" y="342" fill="#a0c4b0" font-size="11">CNN</text>
+    <text x="802" y="355" fill="#4a7a5a" font-size="9">HD • LIVE</text>
+
+    <!-- Channel 7 -->
+    <rect x="764" y="368" width="159" height="34" rx="8" fill="none"/>
+    <circle cx="785" cy="385" r="10" fill="#1a3a24" stroke="#2a5a3a" stroke-width="1"/>
+    <text x="785" y="389" font-size="9" fill="#888" text-anchor="middle">DA</text>
+    <text x="802" y="382" fill="#a0c4b0" font-size="11">DAZN</text>
+    <text x="802" y="395" fill="#4a7a5a" font-size="9">4K • LIVE</text>
+
+    <!-- More channels indicator -->
+    <text x="843" y="455" font-size="11" fill="#10b981" text-anchor="middle" opacity="0.6">+20,993 more</text>
+  </g>
+
+  <!-- ── PHONE MOCKUP ── -->
+  <rect x="956" y="130" width="100" height="200" rx="16" fill="#0a1e12" stroke="#1a4a2e" stroke-width="1.5"/>
+  <rect x="962" y="148" width="88" height="160" rx="6" fill="#030d07"/>
+  <!-- Phone screen content -->
+  <rect x="962" y="148" width="88" height="60" rx="6" fill="#071a0f"/>
+  <circle cx="1006" cy="178" r="18" fill="#10b981" opacity="0.1"/>
+  <polygon points="1001,170 1001,186 1016,178" fill="#10b981" opacity="0.8"/>
+  <!-- Phone channel list -->
+  <rect x="968" y="214" width="76" height="16" rx="4" fill="#0d2a18"/>
+  <rect x="968" y="235" width="76" height="16" rx="4" fill="#0d2a18"/>
+  <rect x="968" y="256" width="76" height="16" rx="4" fill="#0d2a18"/>
+  <rect x="968" y="277" width="50" height="16" rx="4" fill="#0d2a18"/>
+  <!-- Phone home indicator -->
+  <rect x="994" y="314" width="24" height="3" rx="2" fill="#2a5a3a"/>
+
+  <!-- ── STATS PANEL (bottom left) ── -->
+  <rect x="36" y="470" width="700" height="120" rx="14" fill="#0a1e12" stroke="#1a4a2e" stroke-width="1"/>
+
+  <!-- Stat 1 -->
+  <g text-anchor="middle">
+    <text x="120" y="510" font-family="Arial,sans-serif" font-size="28" font-weight="bold" fill="#10b981" filter="url(#softGlow)">21K+</text>
+    <text x="120" y="530" font-family="Arial,sans-serif" font-size="11" fill="#6aad8a">Live Channels</text>
+    <line x1="120" y1="545" x2="120" y2="570" stroke="#1a4a2e" stroke-width="1"/>
+    <rect x="80" y="555" width="80" height="6" rx="3" fill="#1a3a24"/>
+    <rect x="80" y="555" width="72" height="6" rx="3" fill="url(#green)"/>
+  </g>
+
+  <!-- Divider -->
+  <line x1="215" y1="485" x2="215" y2="575" stroke="#1a4a2e" stroke-width="1"/>
+
+  <!-- Stat 2 -->
+  <g text-anchor="middle">
+    <text x="305" y="510" font-family="Arial,sans-serif" font-size="28" font-weight="bold" fill="#10b981" filter="url(#softGlow)">65K+</text>
+    <text x="305" y="530" font-family="Arial,sans-serif" font-size="11" fill="#6aad8a">Movies &amp; Series</text>
+    <rect x="265" y="555" width="80" height="6" rx="3" fill="#1a3a24"/>
+    <rect x="265" y="555" width="68" height="6" rx="3" fill="url(#green)"/>
+  </g>
+
+  <!-- Divider -->
+  <line x1="400" y1="485" x2="400" y2="575" stroke="#1a4a2e" stroke-width="1"/>
+
+  <!-- Stat 3 -->
+  <g text-anchor="middle">
+    <text x="490" y="510" font-family="Arial,sans-serif" font-size="28" font-weight="bold" fill="#10b981" filter="url(#softGlow)">99.9%</text>
+    <text x="490" y="530" font-family="Arial,sans-serif" font-size="11" fill="#6aad8a">Uptime</text>
+    <rect x="450" y="555" width="80" height="6" rx="3" fill="#1a3a24"/>
+    <rect x="450" y="555" width="79" height="6" rx="3" fill="url(#green)"/>
+  </g>
+
+  <!-- Divider -->
+  <line x1="585" y1="485" x2="585" y2="575" stroke="#1a4a2e" stroke-width="1"/>
+
+  <!-- Stat 4 -->
+  <g text-anchor="middle">
+    <text x="660" y="510" font-family="Arial,sans-serif" font-size="28" font-weight="bold" fill="#10b981" filter="url(#softGlow)">4K</text>
+    <text x="660" y="530" font-family="Arial,sans-serif" font-size="11" fill="#6aad8a">UHD Quality</text>
+    <rect x="620" y="555" width="80" height="6" rx="3" fill="#1a3a24"/>
+    <rect x="620" y="555" width="80" height="6" rx="3" fill="url(#green)"/>
+  </g>
+
+  <!-- ── TITLE / BRAND (top left) ── -->
+  <text x="56" y="60" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="#10b981" opacity="0.7" letter-spacing="4">IPTV TRENDS</text>
+  <text x="56" y="88" font-family="Arial,sans-serif" font-size="32" font-weight="bold" fill="#ffffff">#1 Trend IPTV</text>
+  <text x="56" y="112" font-family="Arial,sans-serif" font-size="32" font-weight="bold" fill="#10b981">Service 2026</text>
+
+  <!-- Live dot -->
+  <circle cx="968" cy="108" r="6" fill="#10b981" filter="url(#glow)"/>
+  <circle cx="968" cy="108" r="10" fill="#10b981" opacity="0.2"/>
+  <text x="982" y="113" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="#10b981">LIVE</text>
+
+  <!-- Decorative corner accent -->
+  <path d="M1150 0 L1200 0 L1200 80" fill="none" stroke="#10b981" stroke-width="2" opacity="0.3"/>
+  <path d="M0 550 L0 630 L80 630" fill="none" stroke="#10b981" stroke-width="2" opacity="0.3"/>
+</svg>

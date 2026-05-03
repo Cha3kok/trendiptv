@@ -10,6 +10,7 @@ import PromoBanner from "@/components/promo-banner"
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "IPTV Plans", href: "/products" },
+  { label: "Blog", href: "/blog" },
   { label: "Pricing", href: "/#pricing" },
   { label: "Reseller", href: "/#reseller" },
   { label: "Contact Us", href: "https://wa.me/212707711512" },
