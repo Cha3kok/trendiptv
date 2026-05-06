@@ -6,6 +6,8 @@ import Link from "next/link"
 import { Calendar, User, Tag, ArrowLeft } from "lucide-react"
 import type { Metadata } from "next"
 
+export const dynamicParams = true;
+
 type Props = { params: Promise<{ slug: string }> }
 
 export async function generateStaticParams() {

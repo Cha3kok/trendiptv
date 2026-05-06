@@ -5,6 +5,8 @@ import Footer from "@/components/footer"
 import { Calendar, User, Tag, ArrowRight } from "lucide-react"
 import type { Metadata } from "next"
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "IPTV Blog – Tips, Guides & News | IPTV Trends",
   description:
