@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
+import { Reveal } from "@/components/motion/reveal"
+import { whatsappLink, INTENT } from "@/lib/whatsapp"
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import {
   CheckCircle2,
-  Star,
   ArrowRight,
   ChevronRight,
   Tv2,
@@ -80,9 +81,12 @@ export default async function ProductPage({ params }: Props) {
 
   const otherProducts = products.filter((p) => p.id !== product.id)
 
+  // No aggregateRating or review markup: Google only allows it when real, visible,
+  // independently collected reviews exist. Re-add it once reviews come from a real source.
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Product',
+    '@id': `https://www.trendsiptv.com/products/${product.slug}#product`,
     name: product.name,
     description: product.metaDescription,
     image: `https://www.trendsiptv.com${product.image}`,
@@ -99,35 +103,8 @@ export default async function ProductPage({ params }: Props) {
       priceValidUntil: '2026-12-31',
       availability: 'https://schema.org/InStock',
       itemCondition: 'https://schema.org/NewCondition',
-      seller: {
-        '@type': 'Organization',
-        name: 'IPTV Trends',
-        url: 'https://www.trendsiptv.com',
-      },
+      seller: { '@id': 'https://www.trendsiptv.com/#organization', '@type': 'Organization', name: 'IPTV Trends' },
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: product.ratingValue.toString(),
-      reviewCount: product.reviewCount.toString(),
-      bestRating: '5',
-      worstRating: '1',
-    },
-    review: [
-      {
-        '@type': 'Review',
-        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-        author: { '@type': 'Person', name: 'James R.' },
-        reviewBody: `The ${product.shortName} plan is exactly what I needed. Crystal clear 4K, zero buffering, and the support team is always available. Best IPTV service I've used.`,
-        datePublished: '2026-02-14',
-      },
-      {
-        '@type': 'Review',
-        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-        author: { '@type': 'Person', name: 'Maria S.' },
-        reviewBody: `Switched from cable to IPTV Trends on the ${product.shortName} plan. ${product.reviewCount.toLocaleString()} reviews don't lie — this service is outstanding.`,
-        datePublished: '2026-01-28',
-      },
-    ],
   }
 
   const breadcrumbJsonLd = {
@@ -146,7 +123,7 @@ export default async function ProductPage({ params }: Props) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 
       {/* Breadcrumb */}
-      <nav className="mx-auto max-w-7xl px-4 pt-28 pb-2" aria-label="Breadcrumb">
+      <nav className="mx-auto max-w-7xl px-4 pt-40 pb-2" aria-label="Breadcrumb">
         <ol className="flex items-center gap-1.5 text-sm text-muted-foreground">
           <li><Link href="/" className="hover:text-foreground">Home</Link></li>
           <ChevronRight className="h-3.5 w-3.5" />
@@ -165,11 +142,6 @@ export default async function ProductPage({ params }: Props) {
           <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
             {/* Image */}
             <div className="relative overflow-hidden rounded-2xl">
-              {product.badge && (
-                <div className="absolute left-4 top-4 z-10 rounded-full bg-primary px-4 py-1.5 text-sm font-bold text-primary-foreground">
-                  {product.badge}
-                </div>
-              )}
               <Image
                 src={product.image}
                 alt={product.name}
@@ -182,20 +154,10 @@ export default async function ProductPage({ params }: Props) {
 
             {/* Info */}
             <div className="flex flex-col">
-              {/* Rating */}
-              <div className="flex items-center gap-2">
-                <div className="flex">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star
-                      key={i}
-                      className={`h-4 w-4 ${i < Math.round(product.ratingValue) ? 'fill-primary text-primary' : 'text-muted-foreground'}`}
-                    />
-                  ))}
-                </div>
-                <span className="text-sm text-muted-foreground">
-                  {product.ratingValue} · {product.reviewCount.toLocaleString()} verified reviews
-                </span>
-              </div>
+              {/* Plan guarantees (verifiable facts only) */}
+              <p className="text-sm text-muted-foreground">
+                Instant activation · 7-day money-back guarantee · 24/7 WhatsApp support
+              </p>
 
               <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
                 {product.name}
@@ -224,7 +186,14 @@ export default async function ProductPage({ params }: Props) {
                 )}
                 <div className="mt-4 flex flex-col gap-3 sm:flex-row">
                   <Link
-                    href="https://wa.me/212707711512"
+                    href={whatsappLink({
+                      intent: INTENT.order(product.shortName),
+                      plan: product.shortName,
+                      price: product.price,
+                      button: `Order ${product.shortName} Plan`,
+                      section: "Plan summary (top of page)",
+                      page: `/products/${product.slug}`,
+                    })}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="neon-glow flex flex-1 items-center justify-center gap-2 rounded-xl bg-primary py-3.5 text-sm font-bold text-primary-foreground transition-all hover:brightness-110"
@@ -233,7 +202,13 @@ export default async function ProductPage({ params }: Props) {
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                   <Link
-                    href="https://wa.me/212707711512?text=I%20want%20a%2024h%20free%20IPTV%20trial"
+                    href={whatsappLink({
+                      intent: INTENT.trial,
+                      plan: product.shortName,
+                      button: "Try Free for 24h",
+                      section: "Plan summary (top of page)",
+                      page: `/products/${product.slug}`,
+                    })}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-border/50 py-3.5 text-sm font-medium text-muted-foreground transition-colors hover:border-primary/40 hover:text-foreground"
@@ -256,7 +231,7 @@ export default async function ProductPage({ params }: Props) {
       </section>
 
       {/* Article: Overview */}
-      <section className="px-4 py-12">
+      <Reveal as="section" className="px-4 py-12">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
             About the {product.shortName} Plan
@@ -273,10 +248,10 @@ export default async function ProductPage({ params }: Props) {
             any compatible device.
           </p>
         </div>
-      </section>
+      </Reveal>
 
       {/* What's Included */}
-      <section className="px-4 py-12">
+      <Reveal as="section" className="px-4 py-12">
         <div className="mx-auto max-w-7xl">
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
             What&apos;s Included
@@ -307,10 +282,10 @@ export default async function ProductPage({ params }: Props) {
             </ul>
           </div>
         </div>
-      </section>
+      </Reveal>
 
       {/* Who is this for */}
-      <section className="px-4 py-12">
+      <Reveal as="section" className="px-4 py-12">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
             Who Is the {product.shortName} Plan For?
@@ -324,10 +299,10 @@ export default async function ProductPage({ params }: Props) {
             ))}
           </div>
         </div>
-      </section>
+      </Reveal>
 
       {/* Compatible Devices */}
-      <section className="px-4 py-12">
+      <Reveal as="section" className="px-4 py-12">
         <div className="mx-auto max-w-7xl">
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl">Compatible Devices</h2>
           <p className="mt-2 text-muted-foreground">
@@ -347,10 +322,10 @@ export default async function ProductPage({ params }: Props) {
             ))}
           </div>
         </div>
-      </section>
+      </Reveal>
 
       {/* How to Get Started */}
-      <section className="px-4 py-12">
+      <Reveal as="section" className="px-4 py-12">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
             How to Get Started in 3 Steps
@@ -365,10 +340,10 @@ export default async function ProductPage({ params }: Props) {
             ))}
           </div>
         </div>
-      </section>
+      </Reveal>
 
       {/* FAQ */}
-      <section className="px-4 py-12">
+      <Reveal as="section" className="px-4 py-12">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
             Frequently Asked Questions
@@ -385,10 +360,10 @@ export default async function ProductPage({ params }: Props) {
             ))}
           </div>
         </div>
-      </section>
+      </Reveal>
 
       {/* Other Plans */}
-      <section className="px-4 py-12">
+      <Reveal as="section" className="px-4 py-12">
         <div className="mx-auto max-w-7xl">
           <h2 className="text-2xl font-bold text-foreground sm:text-3xl">Other IPTV Plans</h2>
           <p className="mt-2 text-muted-foreground">Compare all available IPTV Trends subscriptions.</p>
@@ -427,10 +402,10 @@ export default async function ProductPage({ params }: Props) {
             ))}
           </div>
         </div>
-      </section>
+      </Reveal>
 
       {/* Final CTA */}
-      <section className="px-4 pb-20 pt-4">
+      <Reveal as="section" className="px-4 pb-20 pt-4">
         <div className="mx-auto max-w-3xl">
           <div className="glass rounded-2xl p-8 text-center sm:p-12">
             <Clock className="mx-auto mb-4 h-10 w-10 text-primary" />
@@ -443,7 +418,14 @@ export default async function ProductPage({ params }: Props) {
             </p>
             <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <Link
-                href="https://wa.me/212707711512"
+                href={whatsappLink({
+                  intent: INTENT.order(product.shortName),
+                  plan: product.shortName,
+                  price: product.price,
+                  button: `Order ${product.shortName} — ${product.priceFormatted}`,
+                  section: "Bottom order banner",
+                  page: `/products/${product.slug}`,
+                })}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="neon-glow inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-3.5 text-sm font-bold text-primary-foreground transition-all hover:brightness-110"
@@ -461,7 +443,7 @@ export default async function ProductPage({ params }: Props) {
             </div>
           </div>
         </div>
-      </section>
+      </Reveal>
     </>
   )
 }

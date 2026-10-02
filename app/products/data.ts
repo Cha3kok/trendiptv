@@ -25,8 +25,6 @@ export type Product = {
   included: string[]
   targetAudience: string[]
   faq: { question: string; answer: string }[]
-  reviewCount: number
-  ratingValue: number
   image: string
   sku: string
   accentClass: string
@@ -45,16 +43,16 @@ export const products: Product[] = [
     pricePerMonth: '$19.99',
     popular: false,
     tagline: 'Perfect for getting started — no commitment, full access.',
-    metaTitle: 'IPTV 1 Month Subscription – $19.99 | 21,000+ Channels in 4K | IPTV Trends',
+    metaTitle: 'IPTV 1 Month Subscription – $19.99 | IPTV Trends',
     metaDescription:
-      'Buy the IPTV Trends 1-month subscription for $19.99. Get instant access to 21,000+ live channels, 65,000+ VOD, 4K UHD quality, and anti-freeze technology. Cancel anytime.',
+      'IPTV Trends 1-month plan for $19.99: 21,000+ live channels, 65,000+ movies and series in 4K, instant activation and a 7-day money-back guarantee.',
     articleIntro:
       'The IPTV Trends 1 Month Plan is the ideal entry point for anyone looking to experience premium IPTV streaming without a long-term commitment. For just $19.99, you get full access to our entire library of 21,000+ live channels and 65,000+ movies and series — all in stunning 4K UHD quality. Whether you\'re testing a new service or simply need IPTV for a short period, this plan delivers everything without compromise.',
     features: [
       { title: '21,000+ Live Channels', description: 'Sports, news, entertainment, and international channels from every country.' },
       { title: '65,000+ Movies & Series', description: 'Full on-demand library including the latest releases and classics.' },
       { title: '4K / UHD Streaming', description: 'Crystal-clear picture quality on all supported devices.' },
-      { title: 'All Sports & PPV Events', description: 'beIN Sports, Sky Sports, ESPN, DAZN, and all major PPV events included.' },
+      { title: 'All Sports & PPV Events', description: 'Premium sports channels, live football, and all major PPV events included.' },
       { title: 'Anti-Freeze Technology', description: 'Proprietary buffering prevention for uninterrupted viewing.' },
       { title: '24/7 Customer Support', description: 'Instant WhatsApp support around the clock.' },
       { title: 'All Devices Compatible', description: 'Works on Smart TV, Firestick, Android, iOS, MAG Box, and PC.' },
@@ -96,11 +94,9 @@ export const products: Product[] = [
         answer: 'Yes! We offer a free 24-hour trial. Contact us on WhatsApp and we\'ll set up your trial within minutes.',
       },
     ],
-    reviewCount: 1840,
-    ratingValue: 4.7,
     image: '/products/1-month-iptv.svg',
     sku: 'IPTV-1M',
-    accentClass: 'from-emerald-500/20 to-transparent',
+    accentClass: 'from-primary/20 to-transparent',
   },
   {
     id: '3-months',
@@ -118,7 +114,7 @@ export const products: Product[] = [
     tagline: 'Three months of premium streaming — great value, total flexibility.',
     metaTitle: 'IPTV 3 Month Subscription – $39.99 ($13.33/mo) | IPTV Trends',
     metaDescription:
-      'Get the IPTV Trends 3-month plan for $39.99 — only $13.33/month. Save 33% vs monthly. Full access to 21,000+ channels, 65,000+ VOD, 4K UHD, and EPG guide.',
+      'IPTV Trends 3-month plan for $39.99 ($13.33/month): 21,000+ live channels, 4K UHD, TV guide (EPG), instant activation and 24/7 support.',
     articleIntro:
       'The IPTV Trends 3 Month Plan strikes the perfect balance between value and flexibility. At just $39.99 for three months — that\'s only $13.33 per month — you save 33% compared to monthly billing while keeping the freedom to reassess after your term. This plan is ideal for regular streamers who want meaningful savings without committing to a full year. With Full EPG support, priority customer service, and instant activation, it\'s the go-to choice for consistent, high-quality IPTV access.',
     features: [
@@ -163,11 +159,9 @@ export const products: Product[] = [
         answer: 'Yes. We offer a free 24-hour trial on WhatsApp so you can verify quality before purchasing any plan.',
       },
     ],
-    reviewCount: 2310,
-    ratingValue: 4.8,
     image: '/products/3-month-iptv.svg',
     sku: 'IPTV-3M',
-    accentClass: 'from-emerald-500/20 to-transparent',
+    accentClass: 'from-primary/20 to-transparent',
   },
   {
     id: '6-months',
@@ -185,7 +179,7 @@ export const products: Product[] = [
     tagline: 'Six months of buffer-free 4K streaming at over half price.',
     metaTitle: 'IPTV 6 Month Subscription – $55.99 ($9.33/mo) | IPTV Trends',
     metaDescription:
-      'The IPTV Trends 6-month plan costs $55.99 — just $9.33/month. Save 53% vs monthly billing. Premium server priority, catch-up TV, zero buffer guarantee, and 21,000+ channels.',
+      'IPTV Trends 6-month plan for $55.99 ($9.33/month, save 53%): 21,000+ channels, 65,000+ movies and series in 4K and 24/7 support.',
     articleIntro:
       'The IPTV Trends 6 Month Plan is designed for the committed cord-cutter who demands reliability and value. At $55.99 for six months — only $9.33/month — you save 53% compared to monthly billing. But savings are just the beginning: 6-month subscribers enjoy premium server priority, meaning your streams get routed to our fastest nodes first. Combined with our Zero Buffer Guarantee and Catch-Up TV, this plan delivers a truly cable-replacement experience.',
     features: [
@@ -232,11 +226,9 @@ export const products: Product[] = [
         answer: 'Yes. IPTV Trends works on any internet connection worldwide. All 21,000+ channels are accessible regardless of your location.',
       },
     ],
-    reviewCount: 3120,
-    ratingValue: 4.8,
     image: '/products/6-month-iptv.svg',
     sku: 'IPTV-6M',
-    accentClass: 'from-emerald-500/20 to-transparent',
+    accentClass: 'from-primary/20 to-transparent',
   },
   {
     id: '12-months',
@@ -253,9 +245,9 @@ export const products: Product[] = [
     popular: true,
     badge: 'BEST SELLER',
     tagline: 'The most popular plan — maximum features, minimum cost per month.',
-    metaTitle: 'IPTV 12 Month Subscription – $79.99 ($6.67/mo) Best Seller | IPTV Trends',
+    metaTitle: 'IPTV 12 Month Plan – $79.99 ($6.67/mo) | IPTV Trends',
     metaDescription:
-      'Best-selling IPTV 12-month plan for $79.99/year — only $6.67/month. Save 67%. Anti-Freeze v10, VIP support, catch-up TV, full VOD, and 21,000+ channels in 4K UHD.',
+      'IPTV Trends 12-month plan for $79.99 ($6.67/month, save 67%): 21,000+ channels in 4K, catch-up TV, full VOD library and VIP support.',
     articleIntro:
       'The IPTV Trends 12 Month Plan is our best-selling subscription and the smartest choice for anyone who has made IPTV their primary entertainment source. At $79.99 per year — just $6.67 per month — you save 67% compared to monthly billing. But value is only part of the story. The 12-month plan unlocks our most powerful infrastructure: Anti-Freeze v10 Engine, VIP Dedicated Support, and full Catch-Up TV. Over 12,000 customers chose this plan in the past year — and for good reason.',
     features: [
@@ -306,11 +298,9 @@ export const products: Product[] = [
         answer: 'No. We will notify you before your plan expires and you renew manually via WhatsApp. No automatic charges.',
       },
     ],
-    reviewCount: 12847,
-    ratingValue: 4.9,
     image: '/products/12-month-iptv.svg',
     sku: 'IPTV-12M',
-    accentClass: 'from-emerald-500/25 to-transparent',
+    accentClass: 'from-primary/25 to-transparent',
   },
   {
     id: '24-months',
@@ -327,9 +317,9 @@ export const products: Product[] = [
     popular: false,
     badge: 'BEST VALUE',
     tagline: 'The ultimate IPTV deal — two full years at the lowest price per month.',
-    metaTitle: 'IPTV 24 Month Subscription – $129.99 ($5.42/mo) Best Value | IPTV Trends',
+    metaTitle: 'IPTV 24 Month Plan – $129.99 ($5.42/mo) | IPTV Trends',
     metaDescription:
-      'Lock in 2 years of premium IPTV for $129.99 — just $5.42/month. Save 73%. Family sharing, custom channel lists, premium VOD first access, and all Anti-Freeze v10 features.',
+      'IPTV Trends 24-month plan for $129.99 ($5.42/month, save 73%): the lowest monthly price, with 21,000+ channels in 4K and 24/7 support.',
     articleIntro:
       'The IPTV Trends 24 Month Plan is the ultimate subscription for those who refuse to compromise on quality or price. Two full years of premium IPTV access for just $129.99 — that\'s $5.42 per month, a 73% saving versus monthly billing. This plan is built for dedicated streamers: it includes every feature in the 12-month plan plus Family Sharing Mode, Custom Channel Lists, and Premium VOD First Access, meaning you watch new releases before anyone else. If IPTV is your main entertainment platform, this is the plan that makes the most sense financially and technically.',
     features: [
@@ -376,11 +366,9 @@ export const products: Product[] = [
         answer: 'At $5.42/month, the 24-month plan is the lowest cost-per-month of any IPTV subscription we\'ve seen on the market, with no compromise on features or quality.',
       },
     ],
-    reviewCount: 4250,
-    ratingValue: 4.9,
     image: '/products/24-month-iptv.svg',
     sku: 'IPTV-24M',
-    accentClass: 'from-emerald-500/20 to-transparent',
+    accentClass: 'from-primary/20 to-transparent',
   },
 ]
 

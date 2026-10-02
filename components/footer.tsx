@@ -1,56 +1,71 @@
 import Link from "next/link"
+import Logo from "@/components/logo"
+import WhatsAppLink from "@/components/whatsapp-link"
+import { INTENT } from "@/lib/whatsapp"
+import { RevealGroup, RevealItem } from "@/components/motion/reveal"
 
 export default function Footer() {
   return (
     <footer className="border-t border-border/30 px-4 py-12">
       <div className="mx-auto max-w-6xl">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
+        <RevealGroup className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
           {/* Brand */}
-          <div>
-            <span className="text-xl font-bold text-foreground">
-              IPTV<span className="text-primary"> Trends</span>
-            </span>
+          <RevealItem>
+            <Logo size={40} animated={false} />
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              IPTV Trends is the #1 premium IPTV subscription service in 2026.
+              IPTV Trends is a premium IPTV subscription service.
               Stream 21,000+ live IPTV channels and 65,000+ VOD movies and series
-              in 4K UHD quality on any device. The best IPTV provider with
-              anti-freeze technology and 99.9% uptime.
+              in 4K UHD quality on any device, with anti-freeze technology,
+              a free 24-hour trial and a 7-day money-back guarantee.
             </p>
-          </div>
+          </RevealItem>
 
           {/* Quick Links */}
-          <div>
-            <h4 className="mb-4 text-sm font-semibold text-foreground">
+          <RevealItem>
+            <p className="mb-4 text-sm font-semibold text-foreground">
               IPTV Trends Links
-            </h4>
+            </p>
             <ul className="flex flex-col gap-2.5">
               {[
                 { label: "IPTV Trends Home", href: "/" },
+                { label: "About IPTV Trends", href: "/about" },
                 { label: "IPTV Subscription Plans", href: "/products" },
                 { label: "IPTV Blog & Guides", href: "/blog" },
                 { label: "IPTV Subscription Pricing", href: "/#pricing" },
                 { label: "IPTV FAQ", href: "/#faq" },
                 { label: "IPTV Reseller Program", href: "/#reseller" },
-                { label: "Contact IPTV Trends", href: "https://wa.me/212707711512" },
-                { label: "Free IPTV Trial", href: "https://wa.me/212707711512?text=I%20want%20a%2024h%20free%20IPTV%20trial" },
-              ].map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+                { label: "Contact IPTV Trends", href: "wa:contact" },
+                { label: "Free IPTV Trial", href: "wa:trial" },
+              ].map((link) => {
+                const className =
+                  "inline-block text-sm text-muted-foreground transition-all duration-200 hover:translate-x-1 hover:text-primary"
+                return (
+                  <li key={link.label}>
+                    {link.href.startsWith("wa:") ? (
+                      <WhatsAppLink
+                        intent={link.href === "wa:trial" ? INTENT.trial : INTENT.contact}
+                        button={link.label}
+                        section="Footer links"
+                        className={className}
+                      >
+                        {link.label}
+                      </WhatsAppLink>
+                    ) : (
+                      <Link href={link.href} className={className}>
+                        {link.label}
+                      </Link>
+                    )}
+                  </li>
+                )
+              })}
             </ul>
-          </div>
+          </RevealItem>
 
           {/* Devices */}
-          <div>
-            <h4 className="mb-4 text-sm font-semibold text-foreground">
+          <RevealItem>
+            <p className="mb-4 text-sm font-semibold text-foreground">
               IPTV Compatible Devices
-            </h4>
+            </p>
             <ul className="flex flex-col gap-2.5">
               {[
                 "Smart TV IPTV (Samsung, LG)",
@@ -67,47 +82,48 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </RevealItem>
 
           {/* Legal */}
-          <div>
-            <h4 className="mb-4 text-sm font-semibold text-foreground">
+          <RevealItem>
+            <p className="mb-4 text-sm font-semibold text-foreground">
               Legal
-            </h4>
+            </p>
             <ul className="flex flex-col gap-2.5">
               {[
                 { label: "Privacy Policy", href: "/privacy-policy" },
                 { label: "Terms of Service", href: "/terms-of-service" },
                 { label: "Refund Policy", href: "/refund-policy" },
                 { label: "Cookie Policy", href: "/cookie-policy" },
+                { label: "DMCA Policy", href: "/dmca" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                    className="inline-block text-sm text-muted-foreground transition-all duration-200 hover:translate-x-1 hover:text-primary"
                   >
                     {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </RevealItem>
 
           {/* Contact */}
-          <div>
-            <h4 className="mb-4 text-sm font-semibold text-foreground">
+          <RevealItem>
+            <p className="mb-4 text-sm font-semibold text-foreground">
               Contact IPTV Trends
-            </h4>
+            </p>
             <ul className="flex flex-col gap-2.5">
               <li>
-                <Link
-                  href="https://wa.me/212707711512"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <WhatsAppLink
+                  intent={INTENT.contact}
+                  button="WhatsApp: +212 707-711512"
+                  section="Footer contact details"
                   className="text-sm text-muted-foreground transition-colors hover:text-primary"
                 >
-                  WhatsApp: +212 710-141872
-                </Link>
+                  WhatsApp: +212 707-711512
+                </WhatsAppLink>
               </li>
               <li className="text-sm text-muted-foreground">
                 24/7 Customer Support
@@ -119,8 +135,8 @@ export default function Footer() {
                 Instant IPTV Activation
               </li>
             </ul>
-          </div>
-        </div>
+          </RevealItem>
+        </RevealGroup>
 
         <div className="mt-10 border-t border-border/30 pt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-between">
           <p className="text-center text-xs text-muted-foreground sm:text-left">
@@ -132,6 +148,7 @@ export default function Footer() {
               { label: "Terms of Service", href: "/terms-of-service" },
               { label: "Refund Policy", href: "/refund-policy" },
               { label: "Cookie Policy", href: "/cookie-policy" },
+                { label: "DMCA Policy", href: "/dmca" },
             ].map((link) => (
               <Link
                 key={link.label}

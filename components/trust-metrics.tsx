@@ -20,10 +20,13 @@ function AnimatedCounter({
   suffix: string
   isInView: boolean
 }) {
-  const [count, setCount] = useState(0)
+  // Start at the real value so the server HTML (what crawlers read) shows the true number.
+  // The count-up only runs in the browser once the stat scrolls into view.
+  const [count, setCount] = useState(target)
 
   useEffect(() => {
     if (!isInView) return
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return
 
     const duration = 2000
     const steps = 60
@@ -47,7 +50,7 @@ function AnimatedCounter({
     target === 99.9 ? count.toFixed(1) : Math.floor(count).toLocaleString()
 
   return (
-    <span className="counter-glow text-3xl font-bold text-foreground sm:text-4xl">
+    <span className="counter-glow text-3xl font-extrabold text-foreground sm:text-4xl">
       {formatted}
       {suffix}
     </span>
@@ -59,8 +62,8 @@ export default function TrustMetrics() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section ref={ref} className="relative px-4 py-20">
-      <div className="mx-auto grid max-w-6xl grid-cols-2 gap-6 lg:grid-cols-4">
+    <section ref={ref} className="relative px-4 py-12">
+      <div className="glass mx-auto grid max-w-6xl grid-cols-2 overflow-hidden rounded-3xl lg:grid-cols-4">
         {metrics.map((metric, index) => (
           <motion.div
             key={metric.label}
@@ -68,11 +71,18 @@ export default function TrustMetrics() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="glass flex flex-col items-center gap-3 rounded-2xl p-6 text-center"
+            whileHover={{ y: -4 }}
+            className="group flex flex-col items-center gap-2 border-border/60 p-6 text-center sm:p-8 [&:nth-child(odd)]:border-r lg:border-r lg:last:border-r-0 [&:nth-child(-n+2)]:border-b lg:[&:nth-child(-n+2)]:border-b-0"
           >
-            <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
-              <metric.icon className="h-6 w-6 text-primary" />
-            </div>
+            <motion.div
+              className="mb-1 flex h-10 w-10 items-center justify-center rounded-full bg-accent/10 transition-colors group-hover:bg-accent/20"
+              initial={{ scale: 0, rotate: -90 }}
+              whileInView={{ scale: 1, rotate: 0 }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", stiffness: 260, damping: 14, delay: 0.2 + index * 0.1 }}
+            >
+              <metric.icon className="h-5 w-5 text-accent" />
+            </motion.div>
             <AnimatedCounter
               target={metric.value}
               suffix={metric.suffix}

@@ -15,6 +15,12 @@ export type BlogPost = {
   author: string
   tags: string[]
   image: string
+  /** Short title for the <title> tag (keeps it under 60 characters with the suffix). */
+  seoTitle: string
+  /** Meta description, about 150 characters. */
+  seoDescription: string
+  /** Last content update (YYYY-MM-DD). Falls back to the publish date. */
+  updated: string
   content: string
 }
 
@@ -41,6 +47,9 @@ export function getAllPosts(): BlogPostMeta[] {
         author: data.author ?? "",
         tags: data.tags ?? [],
         image: data.image ?? "",
+        seoTitle: data.seoTitle ?? data.title ?? "",
+        seoDescription: data.seoDescription ?? data.description ?? "",
+        updated: data.updated ?? data.date ?? "",
       }
     })
     .sort((a, b) => (a.date < b.date ? 1 : -1))
@@ -64,6 +73,9 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
     author: data.author ?? "",
     tags: data.tags ?? [],
     image: data.image ?? "",
+    seoTitle: data.seoTitle ?? data.title ?? "",
+    seoDescription: data.seoDescription ?? data.description ?? "",
+    updated: data.updated ?? data.date ?? "",
     content: contentHtml,
   }
 }

@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
+import { Reveal } from '@/components/motion/reveal'
+import { whatsappLink } from '@/lib/whatsapp'
 
 export const metadata: Metadata = {
   title: 'Terms of Service | IPTV Trends',
@@ -16,8 +18,8 @@ export default function TermsOfService() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen px-4 pb-20 pt-36">
-        <div className="mx-auto max-w-3xl">
+      <main className="min-h-screen px-4 pb-20 pt-44">
+        <Reveal fade={false} className="mx-auto max-w-3xl">
           <div className="mb-10">
             <h1 className="text-3xl font-bold text-foreground sm:text-4xl">Terms of Service</h1>
             <p className="mt-3 text-sm text-muted-foreground">Last updated: {lastUpdated}</p>
@@ -159,13 +161,13 @@ export default function TermsOfService() {
               <p>For any questions regarding these Terms of Service:</p>
               <div className="mt-3 rounded-xl border border-border/50 bg-card p-4">
                 <p className="font-medium text-foreground">IPTV Trends</p>
-                <p className="mt-1">WhatsApp: <Link href="https://wa.me/212707711512" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">+212 707-711512</Link></p>
+                <p className="mt-1">WhatsApp: <Link href={whatsappLink({ intent: "I have a question about your Terms of Service.", button: "+212 707-711512", section: "Terms of Service — Contact section (bottom of page)", page: "/terms-of-service" })} className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">+212 707-711512</Link></p>
                 <p className="mt-1">Website: <Link href="https://www.trendsiptv.com" className="text-primary hover:underline">www.trendsiptv.com</Link></p>
               </div>
             </section>
 
           </div>
-        </div>
+        </Reveal>
       </main>
       <Footer />
     </>

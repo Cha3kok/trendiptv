@@ -4,7 +4,10 @@ description: "Learn how to set up IPTV on any Smart TV in 2026. Step-by-step gui
 date: "2026-05-12"
 author: "IPTV Trends Team"
 tags: ["IPTV Smart TV", "IPTV 2026", "Smart TV Setup", "Streaming"]
-image: "/blog/iptv-for-smart-tv.jpg"
+image: "/blog/iptv-for-smart-tv.webp"
+seoTitle: "IPTV for Smart TV 2026: Setup Guide"
+seoDescription: "Set up IPTV on a Samsung, LG, Sony or Hisense Smart TV: the best apps for each brand, Xtream Codes login and TV guide (EPG) setup."
+updated: "2026-10-02"
 ---
 
 ## IPTV for Smart TV — Stream 21,000+ Channels on the TV You Already Own
@@ -71,8 +74,6 @@ Android TV has the widest app support — TiviMate is available directly from Go
 1. Open **Hisense App Store**
 2. Search for **"IPTV Smarters Pro"**
 3. Install and configure with Xtream Codes login
-
-![IPTV on Smart TV 2026 – EPG guide loaded on Samsung and LG](/blog/iptv-for-smart-tv.jpg)
 
 ---
 

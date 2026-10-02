@@ -1,198 +1,152 @@
+import type { Metadata } from "next"
 import Navbar from "@/components/navbar"
 import Hero from "@/components/hero"
+import AboutIptvTrends from "@/components/about-iptv-trends"
 import TrustMetrics from "@/components/trust-metrics"
 import ChannelSearch from "@/components/channel-search"
 import Pricing from "@/components/pricing"
 import InstallationTabs from "@/components/installation-tabs"
 import ComparisonTable from "@/components/comparison-table"
 import ResellerCTA from "@/components/reseller-cta"
+import LatestGuides from "@/components/latest-guides"
 import FAQ from "@/components/faq"
 import Footer from "@/components/footer"
 import WhatsAppButton from "@/components/whatsapp-button"
+import { FAQS, LAST_UPDATED, PLAN_PRICES, SITE } from "@/lib/site"
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": "https://www.trendsiptv.com/#organization",
-  name: "IPTV Trends",
-  url: "https://www.trendsiptv.com",
-  logo: {
-    "@type": "ImageObject",
-    url: "https://www.trendsiptv.com/icon.svg",
-    width: 512,
-    height: 512,
-  },
-  description:
-    "IPTV Trends is the best premium IPTV subscription service in 2026. Stream 21,000+ live channels and 65,000+ movies & series in 4K UHD on any device.",
-  contactPoint: {
-    "@type": "ContactPoint",
-    telephone: "+212-707-711512",
-    contactType: "customer service",
-    availableLanguage: ["English", "French", "Arabic", "Spanish"],
-  },
-  sameAs: [
-    "https://wa.me/212707711512",
-  ],
-}
-
-const websiteJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": "https://www.trendsiptv.com/#website",
-  name: "IPTV Trends",
-  url: "https://www.trendsiptv.com",
-  publisher: {
-    "@id": "https://www.trendsiptv.com/#organization",
-  },
-  potentialAction: {
-    "@type": "SearchAction",
-    target: {
-      "@type": "EntryPoint",
-      urlTemplate: "https://www.trendsiptv.com/?q={search_term_string}",
-    },
-    "query-input": "required name=search_term_string",
+export const metadata: Metadata = {
+  alternates: { canonical: SITE.url },
+  openGraph: {
+    title: "IPTV Trends | Premium IPTV Subscription & Service in 4K",
+    description:
+      "IPTV Trends streams 21,000+ live channels and 65,000+ movies and series in up to 4K UHD. Plans from $5.42/month, free 24-hour trial and instant setup on any device.",
+    type: "website",
+    url: SITE.url,
+    siteName: "IPTV Trends",
+    locale: "en_US",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "IPTV Trends premium IPTV subscription with 21,000+ live channels in 4K" }],
   },
 }
 
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What is IPTV Trends and why is it the best IPTV service?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "IPTV Trends is a premium IPTV subscription service that provides access to over 21,000 live TV channels and 65,000+ movies and series in 4K UHD quality. We are rated the #1 IPTV service in 2026 by thousands of satisfied subscribers worldwide.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How much does an IPTV Trends subscription cost?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "IPTV Trends offers flexible plans starting from $19.99/month. Plans include: 1 Month at $19.99, 3 Months at $39.99, 6 Months at $55.99, 12 Months at $79.99, and 24 Months at $129.99. All plans include 21,000+ channels, 65,000+ VOD, 4K quality, and anti-freeze technology.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Does IPTV Trends offer a free IPTV trial?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes! IPTV Trends offers a free 24-hour IPTV trial so you can test our service quality, channel lineup, and streaming stability before committing to a paid subscription.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do I install and set up IPTV Trends on my device?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Setting up IPTV Trends takes under 5 minutes. Download a compatible IPTV player (IPTV Smarters Pro, TiviMate) on your Smart TV, Firestick, Android, iOS, or MAG box, enter your credentials, and start streaming.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What channels are included in the IPTV Trends channel list?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "IPTV Trends includes 21,000+ live channels from every country: sports (beIN Sports, Sky Sports, ESPN), entertainment (HBO, Showtime), streaming content, news, kids, and international channels. Plus 65,000+ VOD movies and series.",
-      },
-    },
-  ],
-}
+// Rebuild the page at most once an hour so new blog guides appear in "Latest guides".
+export const revalidate = 3600
 
-const productJsonLd = {
+const ORG_ID = `${SITE.url}/#organization`
+const WEBSITE_ID = `${SITE.url}/#website`
+const WEBPAGE_ID = `${SITE.url}/#webpage`
+const PRODUCT_ID = `${SITE.url}/#product`
+
+const description =
+  "IPTV Trends is a premium IPTV subscription service streaming 21,000+ live TV channels and 65,000+ movies and series in up to 4K UHD on Smart TV, Firestick, Android, iOS, MAG and PC."
+
+/**
+ * One connected JSON-LD graph. Every value comes from lib/site.ts, the same data the
+ * visible page renders, so structured data and on-page text never disagree.
+ */
+const structuredData = {
   "@context": "https://schema.org",
-  "@type": "Product",
-  name: "IPTV Trends Premium Subscription",
-  description:
-    "Best IPTV subscription service with 21,000+ live channels, 65,000+ VOD, 4K UHD streaming, anti-freeze technology, and 99.9% uptime.",
-  brand: { "@type": "Brand", name: "IPTV Trends" },
-  image: "https://www.trendsiptv.com/opengraph-image",
-  offers: [
+  "@graph": [
     {
-      "@type": "Offer",
-      name: "1 Month IPTV Plan",
-      price: "19.99",
-      priceCurrency: "USD",
-      availability: "https://schema.org/InStock",
-      priceValidUntil: "2026-12-31",
-      url: "https://www.trendsiptv.com/#pricing",
+      "@type": "Organization",
+      "@id": ORG_ID,
+      name: SITE.name,
+      alternateName: SITE.alternateName,
+      url: SITE.url,
+      logo: {
+        "@type": "ImageObject",
+        url: SITE.logo,
+        width: 512,
+        height: 512,
+      },
+      description,
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: SITE.phone,
+        contactType: "customer support",
+        url: SITE.whatsapp,
+        availableLanguage: SITE.languages,
+        hoursAvailable: {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          opens: "00:00",
+          closes: "23:59",
+        },
+      },
+      sameAs: [SITE.whatsapp],
     },
     {
-      "@type": "Offer",
-      name: "3 Months IPTV Plan",
-      price: "39.99",
-      priceCurrency: "USD",
-      availability: "https://schema.org/InStock",
-      priceValidUntil: "2026-12-31",
-      url: "https://www.trendsiptv.com/#pricing",
+      "@type": "WebSite",
+      "@id": WEBSITE_ID,
+      url: SITE.url,
+      name: SITE.name,
+      alternateName: SITE.alternateName,
+      inLanguage: "en",
+      publisher: { "@id": ORG_ID },
     },
     {
-      "@type": "Offer",
-      name: "6 Months IPTV Plan",
-      price: "55.99",
-      priceCurrency: "USD",
-      availability: "https://schema.org/InStock",
-      priceValidUntil: "2026-12-31",
-      url: "https://www.trendsiptv.com/#pricing",
+      "@type": "WebPage",
+      "@id": WEBPAGE_ID,
+      url: SITE.url,
+      name: "IPTV Trends | Premium IPTV Subscription & Service in 4K",
+      description,
+      inLanguage: "en",
+      isPartOf: { "@id": WEBSITE_ID },
+      about: { "@id": ORG_ID },
+      mainEntity: { "@id": PRODUCT_ID },
+      primaryImageOfPage: { "@type": "ImageObject", url: `${SITE.url}/opengraph-image` },
+      dateModified: LAST_UPDATED,
     },
     {
-      "@type": "Offer",
-      name: "12 Months IPTV Plan",
-      price: "79.99",
-      priceCurrency: "USD",
-      availability: "https://schema.org/InStock",
-      priceValidUntil: "2026-12-31",
-      url: "https://www.trendsiptv.com/#pricing",
+      "@type": "Product",
+      "@id": PRODUCT_ID,
+      name: "IPTV Trends Premium IPTV Subscription",
+      description,
+      brand: { "@type": "Brand", name: SITE.name },
+      manufacturer: { "@id": ORG_ID },
+      image: `${SITE.url}/opengraph-image`,
+      category: "IPTV subscription",
+      offers: PLAN_PRICES.map((plan) => ({
+        "@type": "Offer",
+        name: `${plan.name} IPTV Trends Plan`,
+        price: plan.price.toFixed(2),
+        priceCurrency: "USD",
+        availability: "https://schema.org/InStock",
+        priceValidUntil: "2026-12-31",
+        url: `${SITE.url}/#pricing`,
+        seller: { "@id": ORG_ID },
+      })),
     },
     {
-      "@type": "Offer",
-      name: "24 Months IPTV Plan",
-      price: "129.99",
-      priceCurrency: "USD",
-      availability: "https://schema.org/InStock",
-      priceValidUntil: "2026-12-31",
-      url: "https://www.trendsiptv.com/#pricing",
+      "@type": "FAQPage",
+      "@id": `${SITE.url}/#faq`,
+      isPartOf: { "@id": WEBPAGE_ID },
+      mainEntity: FAQS.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: { "@type": "Answer", text: faq.answer },
+      })),
     },
   ],
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "12847",
-    bestRating: "5",
-  },
 }
 
 export default function Home() {
   return (
     <main className="relative min-h-screen overflow-x-hidden">
-      {/* JSON-LD Structured Data for Google SEO */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
 
       <Navbar />
       <Hero />
+      <AboutIptvTrends />
       <TrustMetrics />
       <ChannelSearch />
       <Pricing />
       <InstallationTabs />
       <ComparisonTable />
       <ResellerCTA />
+      <LatestGuides />
       <FAQ />
       <Footer />
       <WhatsAppButton />

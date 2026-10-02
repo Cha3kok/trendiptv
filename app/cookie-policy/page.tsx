@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
+import { Reveal } from '@/components/motion/reveal'
+import { whatsappLink } from '@/lib/whatsapp'
 
 export const metadata: Metadata = {
   title: 'Cookie Policy | IPTV Trends',
@@ -16,8 +18,8 @@ export default function CookiePolicy() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen px-4 pb-20 pt-36">
-        <div className="mx-auto max-w-3xl">
+      <main className="min-h-screen px-4 pb-20 pt-44">
+        <Reveal fade={false} className="mx-auto max-w-3xl">
           <div className="mb-10">
             <h1 className="text-3xl font-bold text-foreground sm:text-4xl">Cookie Policy</h1>
             <p className="mt-3 text-sm text-muted-foreground">Last updated: {lastUpdated}</p>
@@ -76,7 +78,7 @@ export default function CookiePolicy() {
                 {/* Analytics */}
                 <div className="rounded-xl border border-border/50 bg-card p-4">
                   <div className="mb-2 flex items-center gap-2">
-                    <span className="rounded-full bg-blue-500/15 px-2.5 py-0.5 text-xs font-semibold text-blue-400">Analytics</span>
+                    <span className="rounded-full bg-accent/15 px-2.5 py-0.5 text-xs font-semibold text-accent">Analytics</span>
                     <span className="text-xs text-muted-foreground">Requires consent</span>
                   </div>
                   <p className="text-sm text-muted-foreground">
@@ -155,13 +157,13 @@ export default function CookiePolicy() {
               <p>For any questions about our use of cookies:</p>
               <div className="mt-3 rounded-xl border border-border/50 bg-card p-4">
                 <p className="font-medium text-foreground">IPTV Trends</p>
-                <p className="mt-1">WhatsApp: <Link href="https://wa.me/212707711512" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">+212 707-711512</Link></p>
+                <p className="mt-1">WhatsApp: <Link href={whatsappLink({ intent: "I have a question about your Cookie Policy.", button: "+212 707-711512", section: "Cookie Policy — Contact section (bottom of page)", page: "/cookie-policy" })} className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">+212 707-711512</Link></p>
                 <p className="mt-1">Website: <Link href="https://www.trendsiptv.com" className="text-primary hover:underline">www.trendsiptv.com</Link></p>
               </div>
             </section>
 
           </div>
-        </div>
+        </Reveal>
       </main>
       <Footer />
     </>

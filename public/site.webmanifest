@@ -4,8 +4,8 @@
   "description": "Premium IPTV subscription with 21,000+ live channels and 65,000+ movies in 4K UHD.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#050505",
-  "theme_color": "#34d399",
+  "background_color": "#0a1022",
+  "theme_color": "#ff7a2f",
   "icons": [
     {
       "src": "/favicon.svg",

@@ -1,10 +1,12 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, ChevronDown, Globe } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
+import Logo from "@/components/logo"
+import { usePathname } from "next/navigation"
+import { whatsappLink, INTENT } from "@/lib/whatsapp"
 import PromoBanner from "@/components/promo-banner"
 
 const navLinks = [
@@ -13,20 +15,29 @@ const navLinks = [
   { label: "Blog", href: "/blog" },
   { label: "Pricing", href: "/#pricing" },
   { label: "Reseller", href: "/#reseller" },
-  { label: "Contact Us", href: "https://wa.me/212707711512" },
-]
-
-const languages = [
-  { code: "EN", label: "English", flag: "🇬🇧" },
-  { code: "FR", label: "Fran\u00e7ais", flag: "🇫🇷" },
-  { code: "AR", label: "\u0627\u0644\u0639\u0631\u0628\u064a\u0629", flag: "🇲🇦" },
-  { code: "ES", label: "Espa\u00f1ol", flag: "🇪🇸" },
+  { label: "About", href: "/about" },
+  { label: "Contact Us", href: "whatsapp" },
 ]
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [langOpen, setLangOpen] = useState(false)
-  const [selectedLang, setSelectedLang] = useState(languages[0])
+  const [scrolled, setScrolled] = useState(false)
+  const pathname = usePathname() || "/"
+
+  // Nav entries marked "whatsapp" open WhatsApp with a message naming the button, menu and page.
+  const navHref = (link: (typeof navLinks)[number], section: string) =>
+    link.href === "whatsapp"
+      ? whatsappLink({ intent: INTENT.contact, button: link.label, section, page: pathname })
+      : link.href
+  const buyHref = (section: string) =>
+    whatsappLink({ intent: INTENT.buy, button: "Buy IPTV", section, page: pathname })
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24)
+    onScroll()
+    window.addEventListener("scroll", onScroll, { passive: true })
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [])
 
   return (
     <motion.nav
@@ -36,18 +47,16 @@ export default function Navbar() {
       className="fixed top-0 left-0 right-0 z-50"
     >
       <PromoBanner />
-      <div className="glass">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+      <div className="px-3 pt-3 sm:px-4">
+      <div
+        className={`glass mx-auto rounded-2xl px-4 transition-all duration-500 sm:px-6 ${
+          scrolled ? "max-w-6xl shadow-2xl shadow-black/40 border-primary/20" : "max-w-7xl shadow-lg shadow-black/20"
+        }`}
+      >
+        <div className={`flex items-center justify-between transition-all duration-500 ${scrolled ? "h-14" : "h-16"}`}>
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <Image
-              src="/logo.svg"
-              alt="IPTV Trends"
-              width={140}
-              height={35}
-              priority
-            />
+            <Logo size={36} />
           </Link>
 
           {/* Desktop Nav */}
@@ -55,58 +64,20 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <Link
                 key={link.label}
-                href={link.href}
-                className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                href={navHref(link, "Top navigation bar")}
+                {...(link.href === "whatsapp" ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                className="relative text-sm font-medium text-muted-foreground transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:w-0 after:rounded-full after:bg-primary after:transition-all hover:text-foreground hover:after:w-full"
               >
                 {link.label}
               </Link>
             ))}
 
-            {/* Language Toggle */}
-            <div className="relative">
-              <button
-                onClick={() => setLangOpen(!langOpen)}
-                className="flex items-center gap-1.5 rounded-lg border border-border/50 px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
-                aria-label="Select language"
-              >
-                <Globe className="h-4 w-4" />
-                <span>{selectedLang.flag}</span>
-                <span>{selectedLang.code}</span>
-                <ChevronDown className="h-3 w-3" />
-              </button>
-
-              <AnimatePresence>
-                {langOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -8 }}
-                    className="glass absolute right-0 mt-2 w-40 overflow-hidden rounded-lg"
-                  >
-                    {languages.map((lang) => (
-                      <button
-                        key={lang.code}
-                        onClick={() => {
-                          setSelectedLang(lang)
-                          setLangOpen(false)
-                        }}
-                        className="flex w-full items-center gap-2 px-4 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
-                      >
-                        <span>{lang.flag}</span>
-                        <span>{lang.label}</span>
-                      </button>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
             {/* CTA */}
             <Link
-              href="https://wa.me/212707711512"
+              href={buyHref("Top navigation bar")}
               target="_blank"
               rel="noopener noreferrer"
-              className="neon-glow rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-all hover:brightness-110"
+              className="neon-glow rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground transition-all hover:brightness-110"
             >
               Buy IPTV
             </Link>
@@ -130,39 +101,25 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="glass border-t border-border/30 md:hidden"
+            className="glass mx-auto mt-2 max-w-7xl overflow-hidden rounded-2xl md:hidden"
           >
             <div className="flex flex-col gap-1 px-4 py-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.label}
-                  href={link.href}
+                  href={navHref(link, "Mobile menu")}
+                  {...(link.href === "whatsapp" ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   onClick={() => setMobileMenuOpen(false)}
                   className="rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
                 >
                   {link.label}
                 </Link>
               ))}
-              <div className="mt-2 flex items-center gap-2 px-3">
-                {languages.map((lang) => (
-                  <button
-                    key={lang.code}
-                    onClick={() => setSelectedLang(lang)}
-                    className={`rounded-md px-2 py-1 text-xs transition-colors ${
-                      selectedLang.code === lang.code
-                        ? "bg-primary text-primary-foreground"
-                        : "text-muted-foreground hover:text-foreground"
-                    }`}
-                  >
-                    {lang.flag} {lang.code}
-                  </button>
-                ))}
-              </div>
               <Link
-                href="https://wa.me/212707711512"
+                href={buyHref("Mobile menu")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="neon-glow mt-2 rounded-lg bg-primary px-4 py-2.5 text-center text-sm font-semibold text-primary-foreground"
+                className="neon-glow mt-2 rounded-full bg-primary px-4 py-2.5 text-center text-sm font-semibold text-primary-foreground"
               >
                 Buy IPTV
               </Link>

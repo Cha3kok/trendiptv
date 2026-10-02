@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
-export const alt = 'IPTV Trends – #1 Premium IPTV Service 2026 with 21,000+ Channels in 4K'
+export const alt = 'IPTV Trends premium IPTV service with 21,000+ live channels in 4K'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -16,7 +16,7 @@ export default function Image() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          background: '#050505',
+          background: '#0a1022',
           position: 'relative',
           fontFamily: 'sans-serif',
           overflow: 'hidden',
@@ -32,7 +32,7 @@ export default function Image() {
             width: 700,
             height: 700,
             borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(16,185,129,0.18) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(255,122,47,0.18) 0%, transparent 70%)',
           }}
         />
 
@@ -45,7 +45,7 @@ export default function Image() {
             width: 500,
             height: 500,
             borderRadius: '50%',
-            background: 'radial-gradient(circle, rgba(16,185,129,0.10) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(255,122,47,0.10) 0%, transparent 70%)',
           }}
         />
 
@@ -55,7 +55,7 @@ export default function Image() {
             position: 'absolute',
             inset: 24,
             borderRadius: 20,
-            border: '1px solid rgba(16,185,129,0.2)',
+            border: '1px solid rgba(255,122,47,0.2)',
             display: 'flex',
           }}
         />
@@ -78,8 +78,8 @@ export default function Image() {
               display: 'flex',
               alignItems: 'center',
               gap: 8,
-              background: 'rgba(16,185,129,0.12)',
-              border: '1px solid rgba(16,185,129,0.35)',
+              background: 'rgba(255,122,47,0.12)',
+              border: '1px solid rgba(255,122,47,0.35)',
               borderRadius: 999,
               padding: '8px 20px',
               marginBottom: 28,
@@ -90,18 +90,18 @@ export default function Image() {
                 width: 8,
                 height: 8,
                 borderRadius: '50%',
-                background: '#10b981',
+                background: '#ff7a2f',
               }}
             />
             <span
               style={{
-                color: '#10b981',
+                color: '#ff7a2f',
                 fontSize: 16,
                 fontWeight: 600,
                 letterSpacing: 0.5,
               }}
             >
-              #1 Best IPTV Service 2026 • Buffer-Free 4K Streaming
+              Premium IPTV Service 2026 • Buffer-Free 4K Streaming
             </span>
           </div>
 
@@ -114,28 +114,43 @@ export default function Image() {
               marginBottom: 20,
             }}
           >
-            <span style={{ color: '#f5f5f5', fontSize: 64, fontWeight: 800, letterSpacing: -2 }}>
+            <svg width="68" height="68" viewBox="0 0 48 48" style={{ marginRight: 18 }}>
+            <defs>
+              <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stopColor="#ff6a1f" />
+                <stop offset="1" stopColor="#ffb347" />
+              </linearGradient>
+            </defs>
+            <rect width="48" height="48" rx="13" fill="url(#g)" />
+            <path d="M16 12.5 L36 24 L16 35.5 Z" fill="#0a1022" stroke="#0a1022" strokeWidth="3.5" strokeLinejoin="round" />
+            <path d="M19 29.5 L23.5 25 L26.5 27.5 L31.5 21.5" fill="none" stroke="#ff9a3c" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M28.4 21.3 L31.7 21.3 L31.7 24.6" fill="none" stroke="#ff9a3c" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+            <span style={{ color: '#f4f6fb', fontSize: 64, fontWeight: 800, letterSpacing: -2 }}>
               IPTV
             </span>
-            <span style={{ color: '#10b981', fontSize: 64, fontWeight: 800, letterSpacing: -2 }}>
-              {' '}Trends
+            <span style={{ color: '#ff7a2f', fontSize: 64, fontWeight: 800, letterSpacing: -2 }}>
+              {'\u00a0Trends'}
             </span>
           </div>
 
           {/* Headline */}
           <div
             style={{
-              color: '#f5f5f5',
+              color: '#f4f6fb',
               fontSize: 36,
               fontWeight: 700,
               lineHeight: 1.3,
               marginBottom: 32,
               maxWidth: 900,
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'center',
             }}
           >
-            Premium IPTV Subscription with{' '}
-            <span style={{ color: '#10b981' }}>21,000+ Live Channels</span>{' '}
-            & 65,000+ Movies in 4K
+            <span>Premium IPTV Subscription with</span>
+            <span style={{ color: '#ff7a2f', margin: '0 10px' }}>21,000+ Live Channels</span>
+            <span>& 65,000+ Movies in 4K</span>
           </div>
 
           {/* Stats row */}
@@ -164,7 +179,7 @@ export default function Image() {
               >
                 <span
                   style={{
-                    color: '#10b981',
+                    color: '#ff7a2f',
                     fontSize: 28,
                     fontWeight: 800,
                     lineHeight: 1,
@@ -211,7 +226,7 @@ export default function Image() {
                     width: 6,
                     height: 6,
                     borderRadius: '50%',
-                    background: 'rgba(16,185,129,0.7)',
+                    background: 'rgba(255,122,47,0.7)',
                   }}
                 />
                 <span style={{ color: '#9ca3af', fontSize: 13, fontWeight: 500 }}>{device}</span>
@@ -230,7 +245,7 @@ export default function Image() {
             gap: 8,
           }}
         >
-          <span style={{ color: 'rgba(16,185,129,0.6)', fontSize: 15, fontWeight: 500 }}>
+          <span style={{ color: 'rgba(255,122,47,0.6)', fontSize: 15, fontWeight: 500 }}>
             www.trendsiptv.com
           </span>
         </div>

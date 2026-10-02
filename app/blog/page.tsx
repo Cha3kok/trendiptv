@@ -1,27 +1,63 @@
 import Link from "next/link"
+import Image from "next/image"
 import { getAllPosts } from "@/lib/blog"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
+import { Reveal } from "@/components/motion/reveal"
 import { Calendar, User, Tag, ArrowRight } from "lucide-react"
 import type { Metadata } from "next"
 
 export const dynamic = "force-dynamic";
 
+const SITE = "https://www.trendsiptv.com"
+
 export const metadata: Metadata = {
-  title: "IPTV Blog – Tips, Guides & News | IPTV Trends",
+  title: "IPTV Blog – Setup Guides, Tips & News | IPTV Trends",
   description:
-    "Read the latest IPTV guides, streaming tips, device setup tutorials, and news from the IPTV Trends team.",
-  alternates: { canonical: "https://www.trendsiptv.com/blog" },
+    "IPTV setup guides for Firestick, Smart TV and phones, buying advice, player app comparisons and streaming tips from the IPTV Trends team.",
+  alternates: { canonical: `${SITE}/blog` },
 }
 
 export default function BlogPage() {
   const posts = getAllPosts()
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Blog",
+        "@id": `${SITE}/blog#blog`,
+        name: "IPTV Trends Blog",
+        url: `${SITE}/blog`,
+        description: "IPTV setup guides, buying advice and streaming tips.",
+        publisher: { "@id": `${SITE}/#organization` },
+        inLanguage: "en",
+        blogPost: posts.map((post) => ({
+          "@type": "BlogPosting",
+          "@id": `${SITE}/blog/${post.slug}#article`,
+          headline: post.title,
+          url: `${SITE}/blog/${post.slug}`,
+          datePublished: post.date,
+          dateModified: post.updated || post.date,
+          image: post.image ? `${SITE}${post.image}` : undefined,
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE },
+          { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE}/blog` },
+        ],
+      },
+    ],
+  }
+
   return (
     <main className="min-h-screen">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       <Navbar />
 
-      <section className="pt-32 pb-16 px-4">
+      <section className="pt-44 pb-16 px-4">
         <div className="mx-auto max-w-4xl">
           {/* Header */}
           <div className="mb-12 text-center">
@@ -41,20 +77,24 @@ export default function BlogPage() {
             <p className="text-center text-muted-foreground">No articles yet. Check back soon.</p>
           ) : (
             <div className="flex flex-col gap-6">
-              {posts.map((post) => (
+              {posts.map((post, i) => (
+                <Reveal key={post.slug} delay={Math.min(i, 6) * 0.07} fade={i >= 2}>
                 <Link
                   key={post.slug}
                   href={`/blog/${post.slug}`}
-                  className="group rounded-2xl border border-border/40 bg-secondary/20 overflow-hidden transition-all hover:border-primary/40 hover:bg-secondary/40"
+                  className="glass group block overflow-hidden rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10"
                 >
                   <div className="flex flex-col sm:flex-row">
                     {/* Thumbnail */}
                     {post.image && (
-                      <div className="relative h-48 w-full shrink-0 overflow-hidden sm:h-auto sm:w-52 bg-secondary/50 flex items-center justify-center">
-                        <img
+                      <div className="relative aspect-[1200/630] w-full shrink-0 overflow-hidden bg-secondary/50 sm:my-4 sm:ml-4 sm:w-64 sm:self-center sm:rounded-xl">
+                        <Image
                           src={post.image}
                           alt={post.title}
-                          className="h-full w-full object-contain p-4 transition-transform duration-300 group-hover:scale-105"
+                          fill
+                          priority={i < 2}
+                          sizes="(max-width: 640px) 100vw, 256px"
+                          className="object-cover transition-transform duration-300 group-hover:scale-105"
                         />
                       </div>
                     )}
@@ -106,6 +146,7 @@ export default function BlogPage() {
                     </div>
                   </div>
                 </Link>
+                </Reveal>
               ))}
             </div>
           )}

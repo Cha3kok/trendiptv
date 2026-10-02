@@ -1,13 +1,15 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { CheckCircle2, Star, Zap, ArrowRight } from 'lucide-react'
+import { CheckCircle2, Zap, ArrowRight } from 'lucide-react'
 import { products } from './data'
+import { whatsappLink, INTENT } from "@/lib/whatsapp"
+import { Reveal } from "@/components/motion/reveal"
 
 export const metadata: Metadata = {
-  title: 'IPTV Subscription Plans 2026 – All Plans & Pricing | IPTV Trends',
+  title: 'IPTV Subscription Plans & Prices 2026 | IPTV Trends',
   description:
-    'Browse all IPTV Trends subscription plans: 1 month ($19.99), 3 months ($39.99), 6 months ($55.99), 12 months ($79.99), and 24 months ($129.99). 21,000+ channels, 4K UHD, anti-freeze technology.',
+    'All IPTV Trends plans: 1 month $19.99, 3 months $39.99, 6 months $55.99, 12 months $79.99, 24 months $129.99. 21,000+ channels in 4K.',
   alternates: { canonical: 'https://www.trendsiptv.com/products' },
   openGraph: {
     title: 'All IPTV Subscription Plans | IPTV Trends',
@@ -55,11 +57,11 @@ export default function ProductsPage() {
       />
 
       {/* Hero */}
-      <section className="relative pt-32 pb-16 px-4">
+      <section className="relative pt-44 pb-16 px-4">
         <div className="pointer-events-none absolute inset-0 flex items-start justify-center overflow-hidden">
           <div className="mt-8 h-[500px] w-[700px] rounded-full bg-primary/10 blur-[120px]" />
         </div>
-        <div className="relative mx-auto max-w-4xl text-center">
+        <Reveal fade={false} className="relative mx-auto max-w-4xl text-center">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
             <Zap className="h-3.5 w-3.5" />
             Premium IPTV Plans — Instant Activation
@@ -81,17 +83,18 @@ export default function ProductsPage() {
               </span>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* Products Grid */}
       <section className="px-4 pb-8">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {products.map((product) => (
+            {products.map((product, i) => (
+              <Reveal key={product.id} delay={i * 0.08} fade={i >= 3} className="h-full">
               <article
                 key={product.id}
-                className={`glass group relative flex flex-col overflow-hidden rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10 ${
+                className={`glass group relative flex h-full flex-col overflow-hidden rounded-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/10 ${
                   product.popular ? 'ring-2 ring-primary' : ''
                 }`}
               >
@@ -109,29 +112,15 @@ export default function ProductsPage() {
                     width={800}
                     height={450}
                     className="w-full transition-transform duration-500 group-hover:scale-105"
-                    priority={product.popular}
+                    priority={i < 3}
                   />
                 </Link>
 
                 <div className="flex flex-1 flex-col p-6">
-                  {/* Rating */}
-                  <div className="flex items-center gap-2">
-                    <div className="flex">
-                      {Array.from({ length: 5 }).map((_, i) => (
-                        <Star
-                          key={i}
-                          className={`h-3.5 w-3.5 ${
-                            i < Math.round(product.ratingValue)
-                              ? 'fill-primary text-primary'
-                              : 'text-muted-foreground'
-                          }`}
-                        />
-                      ))}
-                    </div>
-                    <span className="text-xs text-muted-foreground">
-                      {product.ratingValue} ({product.reviewCount.toLocaleString()} reviews)
-                    </span>
-                  </div>
+                  {/* Billing summary (verifiable facts only) */}
+                  <p className="text-xs font-medium text-muted-foreground">
+                    {product.priceFormatted} · {product.billingLabel}
+                  </p>
 
                   {/* Plan name & tagline */}
                   <h2 className="mt-3 text-xl font-bold text-foreground">
@@ -172,7 +161,14 @@ export default function ProductsPage() {
                   {/* Actions */}
                   <div className="mt-6 flex flex-col gap-3">
                     <Link
-                      href="https://wa.me/212707711512"
+                      href={whatsappLink({
+                        intent: INTENT.order(product.shortName),
+                        plan: product.shortName,
+                        price: product.price,
+                        button: `Get ${product.shortName} Plan`,
+                        section: `Plans list (${product.shortName} card)`,
+                        page: "/products",
+                      })}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`neon-glow flex items-center justify-center gap-2 rounded-xl py-3 text-sm font-semibold transition-all hover:brightness-110 ${
@@ -193,6 +189,7 @@ export default function ProductsPage() {
                   </div>
                 </div>
               </article>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -211,7 +208,7 @@ export default function ProductsPage() {
             {devices.map((device) => (
               <span
                 key={device}
-                className="glass rounded-full px-5 py-2.5 text-sm font-medium text-foreground"
+                className="glass rounded-full px-5 py-2.5 text-sm font-medium text-foreground transition-transform duration-300 hover:-translate-y-1 hover:border-primary/40"
               >
                 {device}
               </span>
@@ -223,8 +220,8 @@ export default function ProductsPage() {
       {/* Free Trial CTA */}
       <section className="px-4 pb-20">
         <div className="mx-auto max-w-3xl">
-          <div className="glass rounded-2xl p-8 text-center sm:p-12">
-            <div className="mb-3 text-4xl">📺</div>
+          <Reveal className="glass rounded-2xl p-8 text-center sm:p-12">
+            <div className="animate-float mb-3 text-4xl">📺</div>
             <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
               Not Sure Which Plan to Choose?
             </h2>
@@ -233,7 +230,7 @@ export default function ProductsPage() {
               movie, and feature before committing to any plan.
             </p>
             <Link
-              href="https://wa.me/212707711512?text=I%20want%20a%2024h%20free%20IPTV%20trial"
+              href={whatsappLink({ intent: INTENT.trial, button: "Start Free 24h Trial", section: "Free trial banner", page: "/products" })}
               target="_blank"
               rel="noopener noreferrer"
               className="neon-glow mt-6 inline-flex items-center gap-2 rounded-xl bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:brightness-110"
@@ -241,7 +238,7 @@ export default function ProductsPage() {
               Start Free 24h Trial
               <ArrowRight className="h-4 w-4" />
             </Link>
-          </div>
+          </Reveal>
         </div>
       </section>
     </>

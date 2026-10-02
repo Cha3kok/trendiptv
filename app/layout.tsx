@@ -1,23 +1,28 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter, Geist_Mono } from 'next/font/google'
+import { Inter, Geist_Mono, Sora } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import CookieBanner from '@/components/cookie-banner'
 import PromoBanner from '@/components/promo-banner'
+import MotionProvider from '@/components/motion/motion-provider'
+import ScrollProgress from '@/components/motion/scroll-progress'
+import AmbientBackground from '@/components/motion/ambient-background'
+import Spotlight from '@/components/motion/spotlight'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono' })
+const sora = Sora({ subsets: ['latin'], variable: '--font-sora', weight: ['500', '600', '700', '800'] })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.trendsiptv.com'),
-  title: 'IPTV Trends | #1 Best Premium IPTV Service 2026 - 21,000+ Channels in 4K',
+  title: 'IPTV Trends | Premium IPTV Subscription & Service in 4K',
+  applicationName: 'IPTV Trends',
   description:
-    'IPTV Trends is the best premium IPTV subscription service in 2026. Stream 21,000+ live channels and 65,000+ movies & series in 4K UHD. No buffering, 99.9% uptime. Works on Smart TV, Firestick, Android, iOS & MAG. Try a 24h free IPTV trial today!',
+    'IPTV Trends is a premium IPTV service with 21,000+ live channels and 65,000+ movies in 4K. Plans from $5.42/month, free 24h trial, instant setup.',
   keywords: [
     'IPTV Trends',
     'iptv trends',
     'best IPTV service',
-    'best IPTV service 2026',
     'premium IPTV subscription',
     'buy IPTV',
     'IPTV provider',
@@ -29,15 +34,13 @@ export const metadata: Metadata = {
     'IPTV channels list',
     'IPTV streaming service',
     'IPTV subscription',
-    'best IPTV provider',
     'IPTV reseller',
   ],
   openGraph: {
-    title: 'IPTV Trends | #1 Best Premium IPTV Service 2026',
+    title: 'IPTV Trends | Premium IPTV Subscription & Service in 4K',
     description:
-      'Stream 21,000+ live channels and 65,000+ movies in 4K UHD with IPTV Trends. The most reliable IPTV subscription service with anti-freeze technology and 99.9% uptime.',
+      'IPTV Trends streams 21,000+ live channels and 65,000+ movies and series in up to 4K UHD. Plans from $5.42/month, free 24-hour trial and instant setup on any device.',
     type: 'website',
-    url: 'https://www.trendsiptv.com',
     locale: 'en_US',
     siteName: 'IPTV Trends',
     images: [
@@ -45,23 +48,27 @@ export const metadata: Metadata = {
         url: '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: 'IPTV Trends – #1 Premium IPTV Service 2026',
+        alt: 'IPTV Trends premium IPTV subscription with 21,000+ live channels in 4K',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'IPTV Trends | Best Premium IPTV Subscription 2026',
+    title: 'IPTV Trends | Premium IPTV Subscription & Service in 4K',
     description:
-      'The #1 IPTV service with 21,000+ channels, 65,000+ VOD, anti-freeze tech & 4K quality. Try IPTV Trends free for 24 hours.',
+      '21,000+ live channels and 65,000+ movies and series in 4K. Plans from $5.42/month. Try IPTV Trends free for 24 hours.',
     images: ['/opengraph-image'],
   },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: 'https://www.trendsiptv.com',
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-snippet': -1,
+      'max-image-preview': 'large',
+      'max-video-preview': -1,
+    },
   },
   icons: {
     icon: [
@@ -74,7 +81,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#050505',
+  themeColor: '#0a1022',
   width: 'device-width',
   initialScale: 1,
 }
@@ -85,9 +92,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${geistMono.variable} ${sora.variable}`}>
       <body className="font-sans antialiased">
-        {children}
+        <MotionProvider>
+          <AmbientBackground />
+          <ScrollProgress />
+          <Spotlight />
+          {children}
+        </MotionProvider>
         <CookieBanner />
         <Analytics />
       </body>

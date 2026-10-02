@@ -1,9 +1,7 @@
-<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="32" height="32" rx="7" fill="#0a0f0d"/>
-  <!-- TV screen outline -->
-  <rect x="3" y="6" width="26" height="17" rx="2.5" stroke="#34d399" stroke-width="1.5" fill="none"/>
-  <!-- Play triangle -->
-  <path d="M13 10.5L21 14.5L13 18.5V10.5Z" fill="#34d399"/>
-  <!-- Stand base -->
-  <path d="M12 23L12 26M20 23L20 26M10 26L22 26" stroke="#34d399" stroke-width="1.5" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 48 48">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff6a1f"/><stop offset="1" stop-color="#ffb347"/></linearGradient></defs>
+  <rect width="48" height="48" rx="13" fill="url(#g)"/>
+  <path d="M16 12.5 L36 24 L16 35.5 Z" fill="#0a1022" stroke="#0a1022" stroke-width="3.5" stroke-linejoin="round"/>
+  <path d="M19 29.5 L23.5 25 L26.5 27.5 L31.5 21.5" fill="none" stroke="#ff9a3c" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M28.4 21.3 L31.7 21.3 L31.7 24.6" fill="none" stroke="#ff9a3c" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

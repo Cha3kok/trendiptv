@@ -27,8 +27,8 @@ export default function ComparisonTable() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h2 className="text-balance text-3xl font-bold text-foreground sm:text-4xl">
-            Why Choose <span className="text-primary">IPTV Trends</span> Over Other IPTV Providers?
+          <h2 className="text-balance text-3xl font-extrabold text-foreground sm:text-4xl">
+            Why Choose <span className="text-gradient">IPTV Trends</span> Over Other IPTV Providers?
           </h2>
           <p className="mt-4 text-pretty text-muted-foreground">
             Compare IPTV Trends vs other IPTV services. See why thousands of subscribers choose IPTV Trends as their go-to premium IPTV provider in 2026.
@@ -40,7 +40,7 @@ export default function ComparisonTable() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="glass mt-10 overflow-hidden rounded-2xl"
+          className="glass mt-10 overflow-hidden rounded-3xl"
         >
           <div className="overflow-x-auto">
             <table className="w-full">
@@ -49,7 +49,7 @@ export default function ComparisonTable() {
                   <th className="px-6 py-4 text-left text-sm font-medium text-muted-foreground">
                     Features
                   </th>
-                  <th className="px-6 py-4 text-center text-sm font-semibold text-primary">
+                  <th className="bg-primary/10 px-6 py-4 text-center text-sm font-bold text-primary">
                     IPTV Trends
                   </th>
                   <th className="px-6 py-4 text-center text-sm font-medium text-muted-foreground">
@@ -59,20 +59,24 @@ export default function ComparisonTable() {
               </thead>
               <tbody>
                 {rows.map((row, index) => (
-                  <tr
+                  <motion.tr
                     key={row.feature}
-                    className={`border-b border-border/10 ${
+                    initial={{ opacity: 0, x: -16 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.05, duration: 0.4 }}
+                    className={`border-b border-border/10 transition-colors hover:bg-primary/5 ${
                       index % 2 === 0 ? "bg-secondary/20" : ""
                     }`}
                   >
                     <td className="px-6 py-3.5 text-sm text-foreground">
                       {row.feature}
                     </td>
-                    <td className="px-6 py-3.5 text-center">
+                    <td className="bg-primary/5 px-6 py-3.5 text-center">
                       {row.us ? (
-                        <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-primary/20">
+                        <motion.span initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ type: "spring", stiffness: 400, damping: 15, delay: 0.2 + index * 0.05 }} className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-primary/20">
                           <Check className="h-4 w-4 text-primary" />
-                        </span>
+                        </motion.span>
                       ) : (
                         <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-destructive/20">
                           <X className="h-4 w-4 text-destructive" />
@@ -81,16 +85,16 @@ export default function ComparisonTable() {
                     </td>
                     <td className="px-6 py-3.5 text-center">
                       {row.others ? (
-                        <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-primary/20">
+                        <motion.span initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ type: "spring", stiffness: 400, damping: 15, delay: 0.2 + index * 0.05 }} className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-primary/20">
                           <Check className="h-4 w-4 text-primary" />
-                        </span>
+                        </motion.span>
                       ) : (
                         <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-destructive/20">
                           <X className="h-4 w-4 text-destructive" />
                         </span>
                       )}
                     </td>
-                  </tr>
+                  </motion.tr>
                 ))}
               </tbody>
             </table>

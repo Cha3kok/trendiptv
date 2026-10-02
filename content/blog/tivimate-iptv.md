@@ -4,7 +4,10 @@ description: "TiviMate is the most popular IPTV player for Firestick and Android
 date: "2026-05-07"
 author: "IPTV Trends Team"
 tags: ["TiviMate", "IPTV Player", "Firestick", "Android TV", "Setup Guide"]
-image: "/blog/tivimate-iptv.jpg"
+image: "/blog/tivimate-iptv.webp"
+seoTitle: "TiviMate IPTV 2026: Setup & Review"
+seoDescription: "TiviMate setup for Firestick and Android TV: installation, adding a playlist, EPG configuration, Premium features and tips for smooth playback."
+updated: "2026-10-02"
 ---
 
 ## TiviMate IPTV — Why It's the #1 Rated IPTV Player in 2026

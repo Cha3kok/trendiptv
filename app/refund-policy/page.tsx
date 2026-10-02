@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
+import { Reveal } from '@/components/motion/reveal'
+import { whatsappLink } from '@/lib/whatsapp'
 
 export const metadata: Metadata = {
   title: 'Refund Policy | IPTV Trends',
@@ -16,8 +18,8 @@ export default function RefundPolicy() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen px-4 pb-20 pt-36">
-        <div className="mx-auto max-w-3xl">
+      <main className="min-h-screen px-4 pb-20 pt-44">
+        <Reveal fade={false} className="mx-auto max-w-3xl">
           <div className="mb-10">
             <h1 className="text-3xl font-bold text-foreground sm:text-4xl">Refund Policy</h1>
             <p className="mt-3 text-sm text-muted-foreground">Last updated: {lastUpdated}</p>
@@ -76,7 +78,7 @@ export default function RefundPolicy() {
               </ul>
               <div className="mt-4">
                 <Link
-                  href="https://wa.me/212707711512?text=Hello,%20I%20would%20like%20to%20request%20a%20refund%20for%20my%20IPTV%20Trends%20subscription."
+                  href={whatsappLink({ intent: "I would like to request a refund for my IPTV Trends subscription.", button: "Request Refund via WhatsApp", section: "Refund Policy — How to request a refund", page: "/refund-policy" })}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-xl border border-primary/30 bg-primary/10 px-5 py-3 text-sm font-semibold text-primary transition-all hover:bg-primary/20"
@@ -115,13 +117,13 @@ export default function RefundPolicy() {
               <p>For any refund questions or disputes, contact our support team:</p>
               <div className="mt-3 rounded-xl border border-border/50 bg-card p-4">
                 <p className="font-medium text-foreground">IPTV Trends Support</p>
-                <p className="mt-1">WhatsApp: <Link href="https://wa.me/212707711512" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">+212 707-711512</Link></p>
+                <p className="mt-1">WhatsApp: <Link href={whatsappLink({ intent: "I have a question about your Refund Policy.", button: "+212 707-711512", section: "Refund Policy — Contact section (bottom of page)", page: "/refund-policy" })} className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">+212 707-711512</Link></p>
                 <p className="mt-1">Available: 24/7</p>
               </div>
             </section>
 
           </div>
-        </div>
+        </Reveal>
       </main>
       <Footer />
     </>

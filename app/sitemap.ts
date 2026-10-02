@@ -1,13 +1,18 @@
 import { MetadataRoute } from 'next'
 import { products } from './products/data'
 import { getAllPosts } from '../lib/blog'
+import { LAST_UPDATED } from '../lib/site'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.trendsiptv.com'
+  const posts = getAllPosts()
+  // Real last-change dates only: Google ignores lastmod values that change on every request.
+  const PLANS_UPDATED = new Date('2026-10-02')
+  const newestPost = posts.reduce((d, p) => ((p.updated || p.date) > d ? p.updated || p.date : d), '2026-01-01')
 
   const productRoutes: MetadataRoute.Sitemap = products.map((p) => ({
     url: `${baseUrl}/products/${p.slug}`,
-    lastModified: new Date('2026-03-31'),
+    lastModified: PLANS_UPDATED,
     changeFrequency: 'weekly',
     priority: 0.9,
   }))
@@ -15,17 +20,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: baseUrl,
-      lastModified: new Date(),
+      lastModified: new Date(LAST_UPDATED),
       changeFrequency: 'daily',
       priority: 1,
     },
     {
       url: `${baseUrl}/products`,
-      lastModified: new Date('2026-03-31'),
+      lastModified: PLANS_UPDATED,
       changeFrequency: 'weekly',
       priority: 0.95,
     },
     ...productRoutes,
+    {
+      url: `${baseUrl}/about`,
+      lastModified: new Date('2026-10-02'),
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
     {
       url: `${baseUrl}/privacy-policy`,
       lastModified: new Date('2026-03-30'),
@@ -51,14 +62,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.3,
     },
     {
+      url: `${baseUrl}/dmca`,
+      lastModified: new Date('2026-10-02'),
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    {
       url: `${baseUrl}/blog`,
-      lastModified: new Date(),
+      lastModified: new Date(newestPost),
       changeFrequency: 'weekly',
       priority: 0.9,
     },
-    ...getAllPosts().map((post) => ({
+    ...posts.map((post) => ({
       url: `${baseUrl}/blog/${post.slug}`,
-      lastModified: new Date(post.date),
+      lastModified: new Date(post.updated || post.date),
       changeFrequency: 'monthly' as const,
       priority: 0.75,
     })),
