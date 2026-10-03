@@ -17,7 +17,7 @@ export const SITE = {
   alternateName: ["Trends IPTV", "trendsiptv.com"],
   domain: "trendsiptv.com",
   url: SITE_URL,
-  logo: `${SITE_URL}/icon.svg`,
+  logo: `${SITE_URL}/icon-512.png`,
   phone: "+212-707-711512",
   phoneDisplay: "+212 707-711512",
   whatsapp: "https://wa.me/212707711512",

@@ -17,6 +17,13 @@ export const metadata: Metadata = {
     description: 'Choose your IPTV Trends plan. Starting from $5.42/month. 21,000+ channels, 4K UHD, instant activation.',
     url: `${SITE_URL}/products`,
     type: 'website',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'IPTV Trends subscription plans from $5.42/month' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'All IPTV Subscription Plans | IPTV Trends',
+    description: 'Choose your IPTV Trends plan. Starting from $5.42/month. 21,000+ channels, 4K UHD, instant activation.',
+    images: ['/opengraph-image'],
   },
 }
 
