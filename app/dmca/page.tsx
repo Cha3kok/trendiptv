@@ -2,6 +2,7 @@ import { SITE_URL, SITE_HOST } from "@/lib/site"
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/navbar'
+import PageSchema from '@/components/page-schema'
 import Footer from '@/components/footer'
 import { Reveal } from '@/components/motion/reveal'
 import { whatsappLink } from '@/lib/whatsapp'
@@ -47,6 +48,7 @@ function Step({ n, children }: { n: number; children: React.ReactNode }) {
 export default function DmcaPolicy() {
   return (
     <>
+      <PageSchema name="DMCA Policy" path="/dmca" description="IPTV Trends respects intellectual property rights. Read our DMCA policy to learn how to submit a copyright infringement notice or a counter-notice." />
       <Navbar />
       <main className="min-h-screen px-4 pb-20 pt-44">
         <Reveal fade={false} className="mx-auto max-w-3xl">

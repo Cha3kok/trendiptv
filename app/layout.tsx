@@ -11,7 +11,8 @@ import Spotlight from '@/components/motion/spotlight'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
-const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono' })
+// Only used for small labels (countdown, code), so it isn't preloaded and never delays the first paint
+const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono', preload: false })
 const sora = Sora({ subsets: ['latin'], variable: '--font-sora', weight: ['500', '600', '700', '800'] })
 
 export const metadata: Metadata = {

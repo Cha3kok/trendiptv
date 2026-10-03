@@ -2,6 +2,7 @@ import { SITE_URL, SITE_HOST } from "@/lib/site"
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/navbar'
+import PageSchema from '@/components/page-schema'
 import Footer from '@/components/footer'
 import { Reveal } from '@/components/motion/reveal'
 import { whatsappLink } from '@/lib/whatsapp'
@@ -18,6 +19,7 @@ const lastUpdated = 'October 3, 2026'
 export default function CookiePolicy() {
   return (
     <>
+      <PageSchema name="Cookie Policy" path="/cookie-policy" description="Learn how IPTV Trends uses cookies and analytics on our website. Manage your cookie preferences." />
       <Navbar />
       <main className="min-h-screen px-4 pb-20 pt-44">
         <Reveal fade={false} className="mx-auto max-w-3xl">

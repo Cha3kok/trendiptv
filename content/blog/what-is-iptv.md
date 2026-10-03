@@ -45,7 +45,7 @@ Most IPTV subscriptions, including [IPTV Trends](/), bundle all three.
 | **Contract** | Usually none | Often 12 to 24 months | None |
 | **Typical monthly cost** | About $5 to $20 | About $80 to $150 | About $8 to $23 per app |
 
-The main difference from streaming apps is **live TV**. Streaming apps mostly offer their own on-demand catalogue, while IPTV focuses on live channels plus a large on-demand library.
+The main difference from streaming apps is **live TV**. Streaming apps mostly offer their own on-demand catalogue, while IPTV focuses on live channels plus a large on-demand library. Read [why viewers are switching from cable to IPTV](/blog/trend-iptv) for the bigger picture.
 
 ## What Do You Need to Watch IPTV?
 
