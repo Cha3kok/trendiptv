@@ -8,8 +8,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = SITE_URL
   const posts = getAllPosts()
   // Real last-change dates only: Google ignores lastmod values that change on every request.
-  const PLANS_UPDATED = new Date('2026-10-02')
-  const newestPost = posts.reduce((d, p) => ((p.updated || p.date) > d ? p.updated || p.date : d), '2026-01-01')
+  const PLANS_UPDATED = new Date(LAST_UPDATED)
+  const newestPost = posts.reduce((d, p) => ((p.updated || p.date) > d ? p.updated || p.date : d), LAST_UPDATED)
 
   const productRoutes: MetadataRoute.Sitemap = products.map((p) => ({
     url: `${baseUrl}/products/${p.slug}`,
@@ -34,37 +34,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...productRoutes,
     {
       url: `${baseUrl}/about`,
-      lastModified: new Date('2026-10-02'),
+      lastModified: new Date(LAST_UPDATED),
       changeFrequency: 'monthly',
       priority: 0.5,
     },
     {
       url: `${baseUrl}/privacy-policy`,
-      lastModified: new Date('2026-03-30'),
+      lastModified: new Date(LAST_UPDATED),
       changeFrequency: 'yearly',
       priority: 0.3,
     },
     {
       url: `${baseUrl}/terms-of-service`,
-      lastModified: new Date('2026-03-30'),
+      lastModified: new Date(LAST_UPDATED),
       changeFrequency: 'yearly',
       priority: 0.3,
     },
     {
       url: `${baseUrl}/refund-policy`,
-      lastModified: new Date('2026-03-30'),
+      lastModified: new Date(LAST_UPDATED),
       changeFrequency: 'yearly',
       priority: 0.3,
     },
     {
       url: `${baseUrl}/cookie-policy`,
-      lastModified: new Date('2026-03-30'),
+      lastModified: new Date(LAST_UPDATED),
       changeFrequency: 'yearly',
       priority: 0.3,
     },
     {
       url: `${baseUrl}/dmca`,
-      lastModified: new Date('2026-10-02'),
+      lastModified: new Date(LAST_UPDATED),
       changeFrequency: 'yearly',
       priority: 0.3,
     },

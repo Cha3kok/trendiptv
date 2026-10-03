@@ -41,7 +41,7 @@ const jsonLd = {
         price: p.price.toFixed(2),
         priceCurrency: 'USD',
         availability: 'https://schema.org/InStock',
-        priceValidUntil: '2026-12-31',
+        priceValidUntil: '2027-12-31',
       },
     },
   })),

@@ -111,7 +111,7 @@ const structuredData = {
         price: plan.price.toFixed(2),
         priceCurrency: "USD",
         availability: "https://schema.org/InStock",
-        priceValidUntil: "2026-12-31",
+        priceValidUntil: "2027-12-31",
         url: `${SITE.url}/#pricing`,
         seller: { "@id": ORG_ID },
       })),

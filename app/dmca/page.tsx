@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 }
 
-const lastUpdated = 'October 2, 2026'
+const lastUpdated = 'October 3, 2026'
 
 // Add a dedicated copyright email here (e.g. 'dmca@yourdomain.com') to show it on the page.
 const dmcaEmail = ''

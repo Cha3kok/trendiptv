@@ -101,7 +101,7 @@ export default async function ProductPage({ params }: Props) {
       url: `${SITE_URL}/products/${product.slug}`,
       priceCurrency: 'USD',
       price: product.price.toFixed(2),
-      priceValidUntil: '2026-12-31',
+      priceValidUntil: '2027-12-31',
       availability: 'https://schema.org/InStock',
       itemCondition: 'https://schema.org/NewCondition',
       seller: { '@id': `${SITE_URL}/#organization`, '@type': 'Organization', name: 'IPTV Trends' },

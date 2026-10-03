@@ -25,8 +25,8 @@ export const SITE = {
 } as const
 
 /** Shown on the page and used as WebPage.dateModified. Update when content changes. */
-export const LAST_UPDATED = "2026-10-02"
-export const LAST_UPDATED_LABEL = "October 2, 2026"
+export const LAST_UPDATED = "2026-10-03"
+export const LAST_UPDATED_LABEL = "October 3, 2026"
 
 export type PlanPrice = {
   name: string

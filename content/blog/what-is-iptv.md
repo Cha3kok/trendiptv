@@ -1,8 +1,7 @@
 ---
 title: "What Is IPTV? How Internet TV Works, What You Need and What It Costs"
 description: "IPTV explained in plain English: how internet TV works, how it differs from cable and streaming apps, the equipment and internet speed you need, and what it costs."
-date: "2026-10-02"
-updated: "2026-10-02"
+date: "2026-10-03"
 author: "IPTV Trends Team"
 tags: ["What Is IPTV", "IPTV Explained", "IPTV 2026", "Streaming"]
 image: "/blog/what-is-iptv.webp"
