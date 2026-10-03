@@ -13,15 +13,15 @@
 
 ## Main pages
 
-- [Home](https://www.trendsiptv.com/): What IPTV Trends is, plans, setup steps and FAQ
-- [IPTV Subscription Plans](https://www.trendsiptv.com/products): All plans with prices and features
-- [IPTV Guides](https://www.trendsiptv.com/blog): Setup tutorials and buying guides
-- [What Is IPTV?](https://www.trendsiptv.com/blog/what-is-iptv): How IPTV works, what you need and what it costs
-- [About IPTV Trends](https://www.trendsiptv.com/about): How the service works, policies and contact
+- [Home](https://ww1.trendsiptv.com/): What IPTV Trends is, plans, setup steps and FAQ
+- [IPTV Subscription Plans](https://ww1.trendsiptv.com/products): All plans with prices and features
+- [IPTV Guides](https://ww1.trendsiptv.com/blog): Setup tutorials and buying guides
+- [What Is IPTV?](https://ww1.trendsiptv.com/blog/what-is-iptv): How IPTV works, what you need and what it costs
+- [About IPTV Trends](https://ww1.trendsiptv.com/about): How the service works, policies and contact
 
 ## Policies
 
-- [Refund Policy](https://www.trendsiptv.com/refund-policy)
-- [Terms of Service](https://www.trendsiptv.com/terms-of-service)
-- [Privacy Policy](https://www.trendsiptv.com/privacy-policy)
-- [DMCA Policy](https://www.trendsiptv.com/dmca)
+- [Refund Policy](https://ww1.trendsiptv.com/refund-policy)
+- [Terms of Service](https://ww1.trendsiptv.com/terms-of-service)
+- [Privacy Policy](https://ww1.trendsiptv.com/privacy-policy)
+- [DMCA Policy](https://ww1.trendsiptv.com/dmca)

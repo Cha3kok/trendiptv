@@ -1,3 +1,4 @@
+import { SITE_URL } from "@/lib/site"
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/navbar'
@@ -8,7 +9,7 @@ import { whatsappLink } from '@/lib/whatsapp'
 export const metadata: Metadata = {
   title: 'Refund Policy | IPTV Trends',
   description: 'IPTV Trends offers a 7-day money-back guarantee on all subscription plans. Read our full refund policy to understand how to request a refund.',
-  alternates: { canonical: 'https://www.trendsiptv.com/refund-policy' },
+  alternates: { canonical: `${SITE_URL}/refund-policy` },
   robots: { index: true, follow: true },
 }
 

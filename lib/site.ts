@@ -4,12 +4,20 @@
  * so search engines and AI answers always see the same numbers.
  */
 
+/**
+ * The live address of the website. Every canonical URL, sitemap entry, structured-data ID,
+ * robots.txt line and WhatsApp message is built from this one value.
+ * To move domains, set NEXT_PUBLIC_SITE_URL in Vercel (or change the default below) and redeploy.
+ */
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://ww1.trendsiptv.com").replace(/\/$/, "")
+export const SITE_HOST = new URL(SITE_URL).host
+
 export const SITE = {
   name: "IPTV Trends",
   alternateName: ["Trends IPTV", "trendsiptv.com"],
   domain: "trendsiptv.com",
-  url: "https://www.trendsiptv.com",
-  logo: "https://www.trendsiptv.com/icon.svg",
+  url: SITE_URL,
+  logo: `${SITE_URL}/icon.svg`,
   phone: "+212-707-711512",
   phoneDisplay: "+212 707-711512",
   whatsapp: "https://wa.me/212707711512",

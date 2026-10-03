@@ -1,10 +1,11 @@
+import { SITE_URL } from "@/lib/site"
 import { MetadataRoute } from 'next'
 import { products } from './products/data'
 import { getAllPosts } from '../lib/blog'
 import { LAST_UPDATED } from '../lib/site'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.trendsiptv.com'
+  const baseUrl = SITE_URL
   const posts = getAllPosts()
   // Real last-change dates only: Google ignores lastmod values that change on every request.
   const PLANS_UPDATED = new Date('2026-10-02')

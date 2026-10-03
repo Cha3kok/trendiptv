@@ -1,3 +1,4 @@
+import { SITE_URL, SITE_HOST } from "@/lib/site"
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/navbar'
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
   title: 'DMCA Policy | IPTV Trends',
   description:
     'IPTV Trends respects intellectual property rights. Read our DMCA policy to learn how to submit a copyright infringement notice or a counter-notice.',
-  alternates: { canonical: 'https://www.trendsiptv.com/dmca' },
+  alternates: { canonical: `${SITE_URL}/dmca` },
   robots: { index: true, follow: true },
 }
 
@@ -215,7 +216,7 @@ export default function DmcaPolicy() {
                     +212 707-711512
                   </Link>
                 </p>
-                <p className="mt-1">Website: www.trendsiptv.com</p>
+                <p className="mt-1">Website: {SITE_HOST}</p>
               </div>
             </section>
           </div>

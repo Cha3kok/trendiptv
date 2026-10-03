@@ -1,3 +1,4 @@
+import { SITE_URL, SITE_HOST } from "@/lib/site"
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/navbar'
@@ -8,7 +9,7 @@ import { whatsappLink } from '@/lib/whatsapp'
 export const metadata: Metadata = {
   title: 'Terms of Service | IPTV Trends',
   description: 'Read the Terms of Service for IPTV Trends. By using our IPTV subscription service, you agree to these terms and conditions.',
-  alternates: { canonical: 'https://www.trendsiptv.com/terms-of-service' },
+  alternates: { canonical: `${SITE_URL}/terms-of-service` },
   robots: { index: true, follow: true },
 }
 
@@ -31,8 +32,8 @@ export default function TermsOfService() {
               <h2 className="mb-3 text-lg font-semibold text-foreground">1. Acceptance of Terms</h2>
               <p>
                 By accessing or using the IPTV Trends website at{' '}
-                <Link href="https://www.trendsiptv.com" className="text-primary hover:underline">
-                  www.trendsiptv.com
+                <Link href={SITE_URL} className="text-primary hover:underline">
+                  {SITE_HOST}
                 </Link>{' '}
                 or purchasing any subscription plan, you agree to be bound by these Terms of Service and
                 our{' '}
@@ -162,7 +163,7 @@ export default function TermsOfService() {
               <div className="mt-3 rounded-xl border border-border/50 bg-card p-4">
                 <p className="font-medium text-foreground">IPTV Trends</p>
                 <p className="mt-1">WhatsApp: <Link href={whatsappLink({ intent: "I have a question about your Terms of Service.", button: "+212 707-711512", section: "Terms of Service — Contact section (bottom of page)", page: "/terms-of-service" })} className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">+212 707-711512</Link></p>
-                <p className="mt-1">Website: <Link href="https://www.trendsiptv.com" className="text-primary hover:underline">www.trendsiptv.com</Link></p>
+                <p className="mt-1">Website: <Link href={SITE_URL} className="text-primary hover:underline">{SITE_HOST}</Link></p>
               </div>
             </section>
 

@@ -1,3 +1,5 @@
+import { SITE_HOST } from "./site"
+
 /**
  * Builds every WhatsApp link on the site, so each message tells support:
  * what the visitor wants, the plan and price (for order buttons),
@@ -5,7 +7,7 @@
  */
 
 export const WHATSAPP_NUMBER = "212707711512"
-export const WEBSITE = "www.trendsiptv.com"
+export const WEBSITE = SITE_HOST
 
 export type WhatsAppMessage = {
   /** What the visitor wants, in their voice. Example: "I want a free 24-hour IPTV trial." */
@@ -38,7 +40,7 @@ export function pageLabel(path: string) {
  * Payment buttons (a plan with a price):
  *   Hello, I want to subscribe to the 12 Months Plan ($79.99)
  *   Button: Get Started
- *   Website: www.trendsiptv.com
+ *   Website: ww1.trendsiptv.com
  *
  * All other buttons:
  *   Hello IPTV Trends

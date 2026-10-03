@@ -1,3 +1,4 @@
+import { SITE_URL, SITE_HOST } from "@/lib/site"
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Navbar from '@/components/navbar'
@@ -8,7 +9,7 @@ import { whatsappLink } from '@/lib/whatsapp'
 export const metadata: Metadata = {
   title: 'Cookie Policy | IPTV Trends',
   description: 'Learn how IPTV Trends uses cookies and analytics on our website. Manage your cookie preferences.',
-  alternates: { canonical: 'https://www.trendsiptv.com/cookie-policy' },
+  alternates: { canonical: `${SITE_URL}/cookie-policy` },
   robots: { index: true, follow: true },
 }
 
@@ -158,7 +159,7 @@ export default function CookiePolicy() {
               <div className="mt-3 rounded-xl border border-border/50 bg-card p-4">
                 <p className="font-medium text-foreground">IPTV Trends</p>
                 <p className="mt-1">WhatsApp: <Link href={whatsappLink({ intent: "I have a question about your Cookie Policy.", button: "+212 707-711512", section: "Cookie Policy — Contact section (bottom of page)", page: "/cookie-policy" })} className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">+212 707-711512</Link></p>
-                <p className="mt-1">Website: <Link href="https://www.trendsiptv.com" className="text-primary hover:underline">www.trendsiptv.com</Link></p>
+                <p className="mt-1">Website: <Link href={SITE_URL} className="text-primary hover:underline">{SITE_HOST}</Link></p>
               </div>
             </section>
 

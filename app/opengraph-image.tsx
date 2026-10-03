@@ -1,3 +1,4 @@
+import { SITE_HOST } from "@/lib/site"
 import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
@@ -246,7 +247,7 @@ export default function Image() {
           }}
         >
           <span style={{ color: 'rgba(255,122,47,0.6)', fontSize: 15, fontWeight: 500 }}>
-            www.trendsiptv.com
+            {SITE_HOST}
           </span>
         </div>
       </div>

@@ -1,3 +1,4 @@
+import { SITE_URL } from "@/lib/site"
 import { notFound } from "next/navigation"
 import Image from "next/image"
 import { getAllPostSlugs, getAllPosts, getPostBySlug } from "@/lib/blog"
@@ -11,7 +12,7 @@ import type { Metadata } from "next"
 
 export const dynamicParams = true
 
-const SITE = "https://www.trendsiptv.com"
+const SITE = SITE_URL
 
 type Props = { params: Promise<{ slug: string }> }
 

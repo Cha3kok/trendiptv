@@ -1,3 +1,4 @@
+import { SITE_URL } from "@/lib/site"
 import type { Metadata } from 'next'
 import { Reveal } from "@/components/motion/reveal"
 import { whatsappLink, INTENT } from "@/lib/whatsapp"
@@ -30,11 +31,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: product.metaTitle,
     description: product.metaDescription,
-    alternates: { canonical: `https://www.trendsiptv.com/products/${product.slug}` },
+    alternates: { canonical: `${SITE_URL}/products/${product.slug}` },
     openGraph: {
       title: product.metaTitle,
       description: product.metaDescription,
-      url: `https://www.trendsiptv.com/products/${product.slug}`,
+      url: `${SITE_URL}/products/${product.slug}`,
       type: 'website',
       images: [{ url: `/products/${product.slug}/opengraph-image`, width: 1200, height: 630 }],
     },
@@ -86,24 +87,24 @@ export default async function ProductPage({ params }: Props) {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Product',
-    '@id': `https://www.trendsiptv.com/products/${product.slug}#product`,
+    '@id': `${SITE_URL}/products/${product.slug}#product`,
     name: product.name,
     description: product.metaDescription,
-    image: `https://www.trendsiptv.com${product.image}`,
+    image: `${SITE_URL}${product.image}`,
     sku: product.sku,
     mpn: product.sku,
     brand: { '@type': 'Brand', name: 'IPTV Trends' },
     category: 'IPTV Subscription',
-    url: `https://www.trendsiptv.com/products/${product.slug}`,
+    url: `${SITE_URL}/products/${product.slug}`,
     offers: {
       '@type': 'Offer',
-      url: `https://www.trendsiptv.com/products/${product.slug}`,
+      url: `${SITE_URL}/products/${product.slug}`,
       priceCurrency: 'USD',
       price: product.price.toFixed(2),
       priceValidUntil: '2026-12-31',
       availability: 'https://schema.org/InStock',
       itemCondition: 'https://schema.org/NewCondition',
-      seller: { '@id': 'https://www.trendsiptv.com/#organization', '@type': 'Organization', name: 'IPTV Trends' },
+      seller: { '@id': `${SITE_URL}/#organization`, '@type': 'Organization', name: 'IPTV Trends' },
     },
   }
 
@@ -111,9 +112,9 @@ export default async function ProductPage({ params }: Props) {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.trendsiptv.com' },
-      { '@type': 'ListItem', position: 2, name: 'IPTV Plans', item: 'https://www.trendsiptv.com/products' },
-      { '@type': 'ListItem', position: 3, name: product.name, item: `https://www.trendsiptv.com/products/${product.slug}` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+      { '@type': 'ListItem', position: 2, name: 'IPTV Plans', item: `${SITE_URL}/products` },
+      { '@type': 'ListItem', position: 3, name: product.name, item: `${SITE_URL}/products/${product.slug}` },
     ],
   }
 

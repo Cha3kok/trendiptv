@@ -1,3 +1,4 @@
+import { SITE_URL } from "@/lib/site"
 import Link from "next/link"
 import Image from "next/image"
 import { getAllPosts } from "@/lib/blog"
@@ -9,7 +10,7 @@ import type { Metadata } from "next"
 
 export const dynamic = "force-dynamic";
 
-const SITE = "https://www.trendsiptv.com"
+const SITE = SITE_URL
 
 export const metadata: Metadata = {
   title: "IPTV Blog – Setup Guides, Tips & News | IPTV Trends",

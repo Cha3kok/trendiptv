@@ -1,3 +1,4 @@
+import { SITE_URL } from "@/lib/site"
 import type { Metadata, Viewport } from 'next'
 import { Inter, Geist_Mono, Sora } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
@@ -14,7 +15,7 @@ const geistMono = Geist_Mono({ subsets: ['latin'], variable: '--font-geist-mono'
 const sora = Sora({ subsets: ['latin'], variable: '--font-sora', weight: ['500', '600', '700', '800'] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.trendsiptv.com'),
+  metadataBase: new URL(SITE_URL),
   title: 'IPTV Trends | Premium IPTV Subscription & Service in 4K',
   applicationName: 'IPTV Trends',
   description:

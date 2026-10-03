@@ -1,3 +1,4 @@
+import { SITE_URL } from "@/lib/site"
 import { MetadataRoute } from 'next'
 
 // AI search crawlers that decide whether a page can be cited in AI answers.
@@ -25,7 +26,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: '/private/',
       },
     ],
-    sitemap: 'https://www.trendsiptv.com/sitemap.xml',
-    host: 'https://www.trendsiptv.com',
+    sitemap: `${SITE_URL}/sitemap.xml`,
+    host: SITE_URL,
   }
 }

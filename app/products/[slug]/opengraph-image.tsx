@@ -1,3 +1,4 @@
+import { SITE_HOST } from "@/lib/site"
 import { ImageResponse } from 'next/og'
 import { products } from '../data'
 
@@ -149,7 +150,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
 
         {/* URL */}
         <div style={{ position: 'absolute', bottom: 36, display: 'flex' }}>
-          <span style={{ color: 'rgba(255,122,47,0.5)', fontSize: 14 }}>www.trendsiptv.com</span>
+          <span style={{ color: 'rgba(255,122,47,0.5)', fontSize: 14 }}>{SITE_HOST}</span>
         </div>
       </div>
     ),

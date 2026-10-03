@@ -1,3 +1,4 @@
+import { SITE_URL } from "@/lib/site"
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -10,11 +11,11 @@ export const metadata: Metadata = {
   title: 'IPTV Subscription Plans & Prices 2026 | IPTV Trends',
   description:
     'All IPTV Trends plans: 1 month $19.99, 3 months $39.99, 6 months $55.99, 12 months $79.99, 24 months $129.99. 21,000+ channels in 4K.',
-  alternates: { canonical: 'https://www.trendsiptv.com/products' },
+  alternates: { canonical: `${SITE_URL}/products` },
   openGraph: {
     title: 'All IPTV Subscription Plans | IPTV Trends',
     description: 'Choose your IPTV Trends plan. Starting from $5.42/month. 21,000+ channels, 4K UHD, instant activation.',
-    url: 'https://www.trendsiptv.com/products',
+    url: `${SITE_URL}/products`,
     type: 'website',
   },
 }
@@ -24,7 +25,7 @@ const jsonLd = {
   '@type': 'ItemList',
   name: 'IPTV Trends Subscription Plans',
   description: 'All available IPTV subscription plans from IPTV Trends',
-  url: 'https://www.trendsiptv.com/products',
+  url: `${SITE_URL}/products`,
   numberOfItems: products.length,
   itemListElement: products.map((p, i) => ({
     '@type': 'ListItem',
@@ -32,8 +33,8 @@ const jsonLd = {
     item: {
       '@type': 'Product',
       name: p.name,
-      url: `https://www.trendsiptv.com/products/${p.slug}`,
-      image: `https://www.trendsiptv.com${p.image}`,
+      url: `${SITE_URL}/products/${p.slug}`,
+      image: `${SITE_URL}${p.image}`,
       description: p.metaDescription,
       offers: {
         '@type': 'Offer',
